@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro--70479481cd786114774c92e8d04a4028.70479481cd786114774c92e8d04a4028.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#navbar {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    /* justify-content: space-around; */
+
+}
+
+#navbar-left {
+    height: 65px;
+    width: 25%;
+    border: 1px solid transparent;
+    margin-top: 5px;
+
+}
+
+#navbar-right {
+    height: 100%;
+    width: 60%;
+    border: 1px solid transparent;
+    margin-right: 50px;
+    margin-left: 50px;
+
+
+}
+
+#right-upper {
+    top: 0;
+    right: 0;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 22px;
+    align-items: center;
+    margin-left: 12%;
+
+}
+
+
+#right-upper:hover {
+    cursor: pointer;
+}
+
+#right-lower {
+    height: 50%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 5px;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar img {
+    position: absolute;
+    width: auto;
+    height: 60%;
+    right: .5rem;
+
+}
+
+#rl:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#site-logo {
+    height: 100%;
+    width: 130px;
+    margin-left: 67px;
+}
+
+#navbar-button {
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-right: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#navbar-input {
+    border-radius: 15px;
+    width: 250px;
+    height: 25px;
+}
+
+#ru {
+    font-size: 12px;
+    color: #2c4152;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+}
+
+#navbar-image {
+    height: 100px;
+    width: 100%;
+    border: 1px solid transparent;
+    margin-top: 10px;
+
+}
+
+#navbar-img {
+    height: 100%;
+    width: 100%;
+}
+
+#bar-img {
+    height: 100%;
+    width: 4%;
+    cursor: pointer;
+    background-color: rgb(47, 66, 84);
+    color: white;
+}
+
+#rl {
+    padding-left: 16px;
+}
