@@ -2,6 +2,7 @@
 .ajioCares,
 .ajioLuxeBanner,
 .bannerItem {
+    min-width: 1360px;
     overflow: hidden;
     /* Ensure that the image doesn't overflow its container */
 }
@@ -21,6 +22,22 @@
     transform: scale(1.01);
     -webkit-transform: scale(1.02);
     /* Scale the image on hover */
+}
+
+.cardBannerItem {
+
+    overflow: hidden;
+}
+
+.cardBannerItem img {
+    width: 100%;
+    transition: transform .6s ease-in;
+    will-change: transform;
+}
+
+.cardBannerItem:hover img {
+    transform: scale(1.01);
+    -webkit-transform: scale(1.02);
 }
 
 .cardItem {
@@ -44,6 +61,7 @@
     -webkit-transform: scale(1.02);
     /* Scale the image on hover */
 }
+
 /*footer*/
 @font-face {
     font-family: 'Source Sans Pro';
@@ -99,8 +117,257 @@
     margin-left: 80px;
 }
 
-.cards{
+.cards {
+    min-width: 1360px;
     overflow-x: hidden;
 }
 
+/*navbar*/
+#navbar {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    min-width: 1360px;
+    /* justify-content: space-around; */
 
+}
+
+#navbar-left {
+    height: 65px;
+    width: 25%;
+    border: 1px solid transparent;
+    margin-top: 5px;
+
+}
+
+#navbar-right {
+    height: 100%;
+    width: 60%;
+    border: 1px solid transparent;
+    margin-right: 50px;
+    margin-left: 50px;
+
+
+}
+
+#right-upper {
+    top: 0;
+    right: 0;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 22px;
+    align-items: center;
+    margin-left: 12%;
+
+}
+
+#right-upper a {
+    text-decoration: none;
+
+}
+
+
+#right-upper:hover {
+    cursor: pointer;
+}
+
+#right-lower {
+    height: 50%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 5px;
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar img {
+    position: absolute;
+    width: auto;
+    height: 60%;
+    right: .5rem;
+
+}
+
+#rl:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#site-logo {
+    height: 100%;
+    width: 130px;
+    margin-left: 67px;
+}
+
+#navbar-button {
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-right: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#navbar-input {
+    border-radius: 15px;
+    width: 250px;
+    height: 25px;
+}
+
+#ru {
+    font-size: 12px;
+    color: #2c4152;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+}
+
+#navbar-image {
+    height: 100px;
+    width: 100%;
+    border: 1px solid transparent;
+    margin-top: 10px;
+
+}
+
+#navbar-img {
+    height: 100%;
+    width: 100%;
+}
+
+#bar-img {
+    height: 100%;
+    width: 4%;
+    cursor: pointer;
+    background-color: rgb(47, 66, 84);
+    color: white;
+}
+
+#rl {
+    padding-left: 16px;
+}
+
+@font-face {
+    font-family: 'Lora Regular Bold';
+    src: url('https://assets.ajio.com/static/assets/fonts/Lora-Bold--755b0d247421de7700dd580f3c5dc7d3.755b0d247421de7700dd580f3c5dc7d3.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bannerExchange {
+    /* min-width: 1360px; */
+    margin-left: 6%;
+    margin-right: 7%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.bannerExchangeText {
+    /* min-width: 1360px; */
+    margin-left: 16%;
+    font-family: 'Lora Regular Bold';
+    text-transform: uppercase;
+    font-size: 14px;
+
+    .assured {
+        margin-left: 3%;
+    }
+
+    margin-bottom:10px;
+}
+
+.firstCarousel,
+.secondCarousel,
+.thirdCarousel,
+.fourthCarousel {
+    cursor: pointer;
+}
+
+/* .cards */
+.right {
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 40px;
+}
+
+.left {
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        margin-left: 50%;
+    }
+}
+
+.overall {
+    cursor:pointer;
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    align-items: center;
+
+    /* Added margin for space below */
+}
+
+.cardItem {
+    cursor: pointer;
+    flex: 0 0 auto;
+    position: relative;
+    /* Added relative positioning */
+}
+
+.cardItem:last-child {
+    margin-right: 0;
+}
+
+.sideButton {
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftCardButton,
+.rightCardButton {
+    pointer-events: auto;
+    /* Re-enabled pointer events for buttons */
+}
+
+.leftCardButton,
+.rightCardButton {
+    flex: 0 0 auto;
+}
+
+.cardOverall {
+    position: relative;
+}
+.wideBanner .cardItem img{
+    height: 350px;
+}
