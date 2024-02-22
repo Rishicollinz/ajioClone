@@ -5,6 +5,24 @@
     font-style: normal;
 }
 
+.content {
+    height: 2000px;
+    /* Just to create enough scrolling space for demonstration */
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    /* Adjust as needed */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for better visibility */
+    z-index: 1000;
+}
+
 #navbar {
     height: 72px;
     width: 100%;

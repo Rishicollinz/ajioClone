@@ -124,7 +124,18 @@
 
 /*navbar*/
 #navbar {
-    height: 72px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    /* Adjust as needed */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for better visibility */
+    z-index: 1000;
+}
+
+#navbar {
+    height: 90px;
     width: 100%;
     display: flex;
     min-width: 1360px;
@@ -186,6 +197,7 @@
     margin-top: 5px;
     margin-left: 15px;
     letter-spacing: 1px;
+
 }
 
 .searchbar {
@@ -227,7 +239,8 @@
 #navbar-input {
     border-radius: 15px;
     width: 250px;
-    height: 25px;
+    height: 35px;
+    
 }
 
 #ru {
@@ -257,6 +270,8 @@
     cursor: pointer;
     background-color: rgb(47, 66, 84);
     color: white;
+    margin-left: 10px;
+    margin-right: 0px;
 }
 
 #rl {
@@ -316,14 +331,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left:20px;
+    margin-left: 20px;
+
     span {
         margin-left: 50%;
     }
 }
 
 .overall {
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     overflow-x: hidden;
     width: 100%;
@@ -368,6 +384,7 @@
 .cardOverall {
     position: relative;
 }
-.wideBanner .cardItem img{
+
+.wideBanner .cardItem img {
     height: 350px;
 }
