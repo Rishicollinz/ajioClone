@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .vertical-carousel .carousel-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .vertical-carousel .carousel-item {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vertical-carousel .carousel-control-prev,
+        .vertical-carousel .carousel-control-next {
+            top: initial;
+            bottom: 10px;
+        }
+
+        .vertical-carousel .carousel-control-prev-icon,
+        .vertical-carousel .carousel-control-next-icon {
+            transform: rotate(90deg);
+        }
+
+        .vertical-carousel .carousel-indicators {
+            flex-direction: column;
+            gap: 0.5rem;
+            right: initial;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+        }
+
+        .vertical-carousel .carousel-indicators [data-bs-target] {
+            position: static;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #bbb;
+            border: none;
+        }
+
+        .vertical-carousel .carousel-indicators .active {
+            background-color: #333;
+        }
+    </style>
+    <title>Vertical Carousel</title>
+</head>
+
+<body>
+    <div id="carouselExampleControls" class="carousel slide vertical-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20231012/WfFS/6527aa6bddf779151935dfed/-473Wx593H-466388450-blue-MODEL.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20231012/3SXt/6527aa6bddf779151935dfa7/-473Wx593H-466388450-blue-MODEL2.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20231012/zoGU/6527aa6bddf779151935dfa5/-473Wx593H-466388450-blue-MODEL3.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20231012/Dk7R/6527aa6bddf779151935dfa6/-473Wx593H-466388450-blue-MODEL4.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20231012/aJxR/6527aa6bddf779151935dfaa/-473Wx593H-466388450-blue-MODEL5.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-B0hYl6KZ4T5b7a0XWVy8t/DB2pgBsMsj5k8boKQDqOxLphI+J5+sw9B0suVxu7wz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
