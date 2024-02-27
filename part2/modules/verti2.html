@@ -89,6 +89,8 @@
             }, 0);
         }
         function verticalScroll(direction, autoChk = false) {
+            let issd = document.querySelector(".Img0 img");
+            //alert(issd.alt);
             const overall = document.querySelector('.verticalCarousel');
             if (scrollLimit < 7) {
                 if (direction == 1) {
@@ -144,7 +146,7 @@
             <div class="verticalCarousel">
                 <div class="prodImg Img0">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/WfFS/6527aa6bddf779151935dfed/-473Wx593H-466388450-blue-MODEL.jpg"
-                        alt="">
+                        alt="j" class="0">
                 </div>
                 <div class="prodImg Img1">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/3SXt/6527aa6bddf779151935dfa7/-473Wx593H-466388450-blue-MODEL2.jpg"

@@ -128,6 +128,24 @@
             let source = document.querySelector(imgPath+" img");
             imageViewerDiv.src = source.src;
         }
+
+        function imgMover(direction){
+            let a=document.querySelectorAll(".prodImg img");
+            let imgViewSrc=document.querySelector(".imageViewerDiv img").src;
+            a.forEach((item,index)=>{
+                if(item.src==imgViewSrc){
+                    if(direction==1){
+                        imageViewer(index+1);
+                        scrollLimit=index+1;
+                        activeImg=index+1;
+                    }else{
+                        imageViewer(index-1);
+                        scrollLimit=index-1;
+                        activeImg=index-1;
+                    }
+                }
+            })
+        }
         
     </script>
     <title>Vertical Carousel</title>
@@ -144,52 +162,52 @@
             <div class="verticalCarousel">
                 <div class="prodImg Img0">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/WfFS/6527aa6bddf779151935dfed/-473Wx593H-466388450-blue-MODEL.jpg"
-                        alt="">
+                        alt="0">
                 </div>
                 <div class="prodImg Img1">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/3SXt/6527aa6bddf779151935dfa7/-473Wx593H-466388450-blue-MODEL2.jpg"
-                        alt="">
+                        alt="1">
                 </div>
                 <div class="prodImg Img2">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/zoGU/6527aa6bddf779151935dfa5/-473Wx593H-466388450-blue-MODEL3.jpg"
-                        alt="">
+                        alt="2">
                 </div>
                 <div class="prodImg Img3">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/Dk7R/6527aa6bddf779151935dfa6/-473Wx593H-466388450-blue-MODEL4.jpg"
-                        alt="">
+                        alt="3">
                 </div>
                 <div class="prodImg Img4">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/aJxR/6527aa6bddf779151935dfaa/-473Wx593H-466388450-blue-MODEL5.jpg"
-                        alt="">
+                        alt="4">
                 </div>
                 <div class="prodImg Img5">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/7wii/6527aa6bddf779151935dfa9/-473Wx593H-466388450-blue-MODEL6.jpg"
-                        alt="">
+                        alt="5">
                 </div>
                 <!-- dup -->
                 <div class="prodImg Img6">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/WfFS/6527aa6bddf779151935dfed/-473Wx593H-466388450-blue-MODEL.jpg"
-                        alt="">
+                        alt="6">
                 </div>
                 <div class="prodImg Img7">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/3SXt/6527aa6bddf779151935dfa7/-473Wx593H-466388450-blue-MODEL2.jpg"
-                        alt="">
+                        alt="7">
                 </div>
                 <div class="prodImg Img8">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/zoGU/6527aa6bddf779151935dfa5/-473Wx593H-466388450-blue-MODEL3.jpg"
-                        alt="">
+                        alt="8">
                 </div>
                 <div class="prodImg Img9">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/Dk7R/6527aa6bddf779151935dfa6/-473Wx593H-466388450-blue-MODEL4.jpg"
-                        alt="">
+                        alt="9">
                 </div>
                 <div class="prodImg Img10">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/aJxR/6527aa6bddf779151935dfaa/-473Wx593H-466388450-blue-MODEL5.jpg"
-                        alt="">
+                        alt="10">
                 </div>
                 <div class="prodImg Img11">
                     <img src="https://assets.ajio.com/medias/sys_master/root/20231012/7wii/6527aa6bddf779151935dfa9/-473Wx593H-466388450-blue-MODEL6.jpg"
-                        alt="">
+                        alt="11">
                 </div>
             </div>
             <button class="btn btn-light" id="verticalDownBtn" onclick="verticalScroll(1)">
@@ -199,7 +217,7 @@
             </button>
         </div>
         <div class="imageViewerOv">
-            <button class="btn btn-light" id="verticalUpBtn" onclick="verticalScroll(-1)">
+            <button class="btn btn-light" id="verticalUpBtn" onclick="imgMover(-1)">
                 <span class="material-symbols-outlined">
                     expand_less
                 </span>
@@ -208,7 +226,7 @@
                 <img src="https://assets.ajio.com/medias/sys_master/root/20231012/WfFS/6527aa6bddf779151935dfed/-473Wx593H-466388450-blue-MODEL.jpg"
                     alt="">
             </div>
-            <button class="btn btn-light" id="verticalDownBtn" onclick="verticalScroll(1)">
+            <button class="btn btn-light" id="verticalDownBtn" onclick="imgMover(1)">
                 <span class="material-symbols-outlined">
                     expand_more
                 </span>

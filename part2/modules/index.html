@@ -16,6 +16,20 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'MuliBold';
+            src: url('https://assets.ajio.com/static/assets/fonts/Muli_Bold--ef0ddd4c3565d4840dc2f11345cf1c02.ef0ddd4c3565d4840dc2f11345cf1c02.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro-Bold--24b1bb81f77894c7ccc2e4d4ff2101fb.24b1bb81f77894c7ccc2e4d4ff2101fb.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         .productDir {
             font-family: 'Source Sans Pro';
             font-size: 11px;
@@ -38,54 +52,318 @@
             border: solid;
             align-items: center;
             justify-content: space-between;
-            margin-left:5.5%;
+            margin-left: 5.5%;
             margin-right: 5.5%;
+            margin-top: 15px;
         }
 
-        .productContainer .verticalCarousel{
+        .productContainer .verticalCarousel {
             border: solid;
-            flex:1.25;
-            color:red;
+            flex: 1.25;
+            color: red;
         }
-        .productContainer .productImage{
-            border:solid;
-            flex:3.15;
+
+        .productContainer .productImage {
+            border: solid;
+            flex: 3.15;
             color: rgb(255, 100, 5);
         }
-        .productContainer .productDescription{
-            border:solid;
-            flex:3;
-            color:rgb(100,255,5);
+
+        .productContainer .productDescription {
+            border: solid;
+            flex: 3;
+            color: rgb(100, 255, 5);
         }
 
+        .productDescription .brandName {
+            font-family: 'Source Sans Pro';
+            font-size: 20px;
+            color: #866528;
+            margin-left: 52.5%;
+        }
+
+        .productDescription .productName {
+            font-family: 'Source Sans Pro';
+            font-size: 18px;
+            color: #333333;
+            margin-left: 35.5%;
+            margin-top: -1%;
+        }
+
+        .productDescription .ratings {
+            display: flex;
+            margin-left: 45%;
+            margin-top: 5px;
+        }
+
+        .productDescription .ratings .ratingLabel {
+            color: #6d6d6d;
+            font-size: 14px;
+            letter-spacing: 0.28px;
+            font-family: '';
+            margin-top: 2px;
+        }
+
+        .productDescription .ratingIcon {
+            width: 42.59px;
+            height: 25px;
+            background-color: #008526;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .productDescription .ratingIcon .star {
+            color: white;
+            display: flex;
+            position: absolute;
+        }
+
+        .productDescription .ratingIcon .star label {
+            font-family: 'MuliBold';
+            font-size: 12px;
+            padding: 2px;
+            letter-spacing: 0.28px;
+            margin-left: 2px;
+            margin-top: 1px
+        }
+
+        .productDescription .ratingIcon .star .inner {
+            margin-top: 7px;
+        }
+
+        .productDescription .productPrice {
+            font-family: 'Source Sans Pro';
+            font-size: 24px;
+            color: #333333;
+            margin-top: 8px;
+            margin-left: 52%;
+        }
+
+        .productDescription .productDiscount {
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color: #866528;
+            margin-left: 43.5%;
+            margin-top: -1%;
+        }
+
+        .productDescription .productDiscount .str {
+            font-family: 'Source Sans Pro Bold';
+        }
+
+        .productDescription .taxlabel {
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            color: #6d6d6d;
+            margin-left: 44.5%;
+        }
+
+        .productDescription .offerBox {
+            display: flex;
+
+        }
+
+        .productDescription .offerBox .getIt {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+            border: dashed;
+            color: red;
+        }
+
+        /*footer*/
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro--70479481cd786114774c92e8d04a4028.70479481cd786114774c92e8d04a4028.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lora Regular';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Regular--12c052959e60357f292b2bed94162d01.12c052959e60357f292b2bed94162d01.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .inner {
+            margin-left: 58px;
+            margin-right: 58px;
+            /* margin:50%; */
+        }
+
+        .inner hr {
+            color: transparent;
+            opacity: 80%;
+            border-bottom: solid white 1px !important;
+        }
+
+        .outer {
+            min-width: 1360px;
+            background-color: rgb(44, 65, 82);
+            background-repeat: inherit;
+        }
+
+        .inner a {
+            display: block;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px;
+            text-decoration: none;
+            color: #CCC;
+            margin-bottom: 6px;
+        }
+
+        .inner .innerTitle {
+            font-size: 14px;
+            font-family: 'Lora Regular';
+            color: #CCC;
+            margin-top: 15px;
+            margin-bottom: 14px;
+            cursor: auto;
+        }
+
+        .inner .secure {
+            margin-left: 80px;
+        }
     </style>
 </head>
 
 <body>
-    <section class="ele"></section>
-    <label class="productDir">
-        <a>Home</a>
-        &nbsp;&nbsp;/&nbsp;&nbsp;
-        <a>Men</a>
-        &nbsp;&nbsp;/&nbsp;&nbsp;
-        <a>Western Wear</a>
-        &nbsp;&nbsp;/&nbsp;&nbsp;
-        <a>Tshirts</a>
-        &nbsp;&nbsp;/&nbsp;&nbsp;
-        <a>Men Ess Slim Fit Polo T-Shirt</a>
-    </label>
-
-    <div class="productContainer">
-        <div class="verticalCarousel">
-            1
-        </div>
-        <div class="productImage">
-            2
-        </div>
-        <div class="productDescription">
-            3
+    <div class="container-fluid">
+        <section class="ele"></section>
+        <label class="productDir">
+            <a>Home</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a>Men</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a>Western Wear</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a>Tshirts</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a>Men Ess Slim Fit Polo T-Shirt</a>
+        </label>
+        <div class="productContainer">
+            <div class="verticalCarousel">
+                1
+            </div>
+            <div class="productImage">
+                2
+            </div>
+            <div class="productDescription">
+                <div class="brandName">
+                    <label>PUMA</label>
+                </div>
+                <div class="productName">
+                    <label>Men Ess Slim Fit Polo T-Shirt</label>
+                </div>
+                <div class="ratings">
+                    <div class="ratingIcon">
+                        <div class="star">
+                            <label>4.2&nbsp;</label>
+                            <div class="inner"><img src="https://assets.ajio.com/static/img/green_star_pdp.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <label class="ratingLabel">&ensp;199 Ratings</label>
+                </div>
+                <div class="productPrice">
+                    <label>₹833</label>
+                </div>
+                <div class="productDiscount">
+                    <label>MRP <s>₹1699</s><strong class="str"> (51% OFF)</strong></label>
+                </div>
+                <div class="taxlabel">
+                    <label>Price inclusive of all taxes</label>
+                </div>
+                <div class="offerBox">
+                    <div class="offer">
+                        <label>Use Code BOLD </label>
+                        <a>T&C</a>
+                    </div>
+                    <div class="getIt">
+                        <div class="getIt1">
+                            <label>Get it for ₹650</label>
+                        </div>
+                        <div class="getIt2">
+                            <label>Above. Max Discount Rs.600</label>
+                            <a>View All Products></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <div class="container-fluid outer">
+            <div class="inner">
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <a href="" class="innerTitle">Ajio</a>
+                        <a href="">Who We are</a>
+                        <a href="">Join Our Team</a>
+                        <a href="">Terms & Conditions</a>
+                        <a href="">We Respect Your Privacy</a>
+                        <a href="">Fees & Payments</a>
+                        <a href="">Returns & Refunds Policy</a>
+                        <a href="">Promotions Terms & Conditions</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="innerTitle">Help</a>
+                        <a href="">Track Your Order</a>
+                        <a href="">Frequently Asked Questions</a>
+                        <a href="">Returns</a>
+                        <a href="">Cancellations</a>
+                        <a href="">Payments</a>
+                        <a href="">Customer Care</a>
+                        <a href="">How Do I Redeem My Coupon</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="innerTitle">Shop by</a>
+                        <a href="">Men</a>
+                        <a href="">Women</a>
+                        <a href="">Kids</a>
+                        <a href="">Indie</a>
+                        <a href="">Stores</a>
+                        <a href="">New Arrivals</a>
+                        <a href="">Brand Directory</a>
+                        <a href="">Home</a>
+                        <a href="">Collections</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="innerTitle">Follow us</a>
+                        <a href="">Facebook</a>
+                        <a href="">Instagram-AJIOlife</a>
+                        <a href="">Instagram-AJIO LUXE</a>
+                        <a href="">Twitter</a>
+                        <a href="">Pinterest</a>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row">
+                    <div class="col-10">
+                        <label class="innerTitle">Payment methods</label>
+                        <br>
+                        <img src="../../images/netbankIcon.png" alt="netbankIcon">
+                        <img src="../../images/visaIcon.png" alt="visaIcon">
+                        <img src="../../images/mastercardIcon.png" alt="mastercardIcon">
+                        <img src="../../images/codIcon.png" alt="codIcon">
+                        <img src="../../images/jioMoneyIcon.png" alt="jioMoneyIcon">
+                    </div>
+                    <div class="col-2">
+                        <div class="secure">
+                            <label class="innerTitle">Secure systems</label>
+                            <br>
+                            <img src="../../images/sslIcon.png" alt="sslIcon">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+    </footer>
 </body>
 
 </html>
