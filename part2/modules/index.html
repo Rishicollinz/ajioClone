@@ -225,6 +225,35 @@
         .inner .secure {
             margin-left: 80px;
         }
+
+        @font-face {
+            font-family: 'Lora Regular Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Bold--755b0d247421de7700dd580f3c5dc7d3.755b0d247421de7700dd580f3c5dc7d3.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .bannerExchange {
+            /* min-width: 1360px; */
+            margin-left: 6%;
+            margin-right: 7%;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .bannerExchangeText {
+            /* min-width: 1360px; */
+            margin-left: 16%;
+            font-family: 'Lora Regular Bold';
+            text-transform: uppercase;
+            font-size: 14px;
+
+            .assured {
+                margin-left: 3%;
+            }
+
+            margin-bottom:10px;
+        }
     </style>
 </head>
 
@@ -290,6 +319,39 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bannerExchange">
+        <div class="row justify-content-center">
+            <div class="col exchange text-center">
+                <img src="/images/exchange.png" alt="easyExchange">
+            </div>
+            <div class="col hand text-center">
+                <img src="/images/hand.png" alt="handpicked">
+            </div>
+            <div class="col assured text-center">
+                <img src="/images/assured.png" alt="assuredQuality">
+            </div>
+        </div>
+    </div>
+    <div class="bannerExchangeText">
+        <div class="row">
+            <div class="col">
+                <label style="cursor:auto"><strong>
+                        Easy Exchange
+                    </strong></label>
+            </div>
+            <div class="col">
+                <label style="cursor:auto"><strong>
+                        100% Handpicked
+                    </strong></label>
+            </div>
+            <div class="col assured">
+                <label style="cursor:auto"><strong>
+                        Assured Quality
+                    </strong></label>
             </div>
         </div>
     </div>
