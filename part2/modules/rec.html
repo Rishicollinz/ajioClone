@@ -1,0 +1,654 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Recently viewed</title>
+    <style>
+        @font-face {
+            font-family: 'Lora Regular Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Bold--755b0d247421de7700dd580f3c5dc7d3.755b0d247421de7700dd580f3c5dc7d3.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lora Regular';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Regular--12c052959e60357f292b2bed94162d01.12c052959e60357f292b2bed94162d01.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro--70479481cd786114774c92e8d04a4028.70479481cd786114774c92e8d04a4028.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro-Bold--24b1bb81f77894c7ccc2e4d4ff2101fb.24b1bb81f77894c7ccc2e4d4ff2101fb.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro Semi Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro-Semibold--f20dfd7873706e4dc6a6523bef4b845e.f20dfd7873706e4dc6a6523bef4b845e.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .recentCard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 338px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .recentCard .image img {
+            display: flex;
+            height: 256px;
+            width: 204px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .recentCard:hover .quickview {
+            bottom: 80px;
+            left: 0px;
+            display: block;
+        }
+
+        .quickview {
+            position: absolute;
+            z-index: 1;
+            display: none;
+            color: #2C4152;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 115px;
+            padding-right: 65px;
+
+        }
+
+        .brandName {
+            font-family: 'Lora Regular Bold';
+            font-size: 14px;
+            color: #866528;
+            cursor: pointer;
+        }
+
+        .productName {
+            font-family: 'Lora Regular';
+            font-size: 14px;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        .productDiscount {
+            cursor: pointer;
+        }
+
+        .productDiscount s {
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            cursor: pointer;
+            color: #866528;
+        }
+
+        .productDiscount .nor {
+            font-family: 'Source Sans Pro Semi Bold';
+            font-size: 16px;
+            color: #333333;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .productDiscount .str {
+            font-family: 'Source Sans Pro Bold';
+            font-size: 14px;
+            cursor: pointer;
+            color: #866528;
+        }
+
+        .cardContainer {
+            width: 1200px;
+            display: flex;
+            overflow-x: hidden;
+            margin-left: 75px;
+            position: relative;
+        }
+
+        .recentCard .discription {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .left1{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .right1{
+            position:absolute;
+            top:100px;
+            right:100px;
+        }
+        .left2{
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        .right2{
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+        .title{
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <label>Similar Styles</label>
+    </div>
+    <div class="overallCont">
+        <div class="cardContainer">
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/8uZd/6527aa68afa4cf41f53d7bb1/puma-black-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/BCLi/6527aa65ddf779151935df66/puma-white-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/qBBz/6527aa71afa4cf41f53d7c67/puma-grey-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/9h7T/6527aa75ddf779151935e069/puma-red-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/HeAo/6527aa76afa4cf41f53d7cb9/puma-pink-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/uNUr/6527aa6bddf779151935dfe4/puma-green-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/1Eey/6527aa68afa4cf41f53d7bb7/puma-yellow-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230629/zyBM/649cbe36eebac147fc2f6290/maniac-blue-polo-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230624/gOnf/64964d64a9b42d15c9d9b442/crocodile-blue-polo-slim-fit-striped-polo-t-shirt-with-short-sleeves.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230629/0bhq/649cefe4eebac147fc3657ca/98%C2%B0north-blue-polo-slim-fit-polo-t-shirt-with-patch-pocket.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sideButton">
+            <div class="leftCardButton left1" style="cursor:pointer">
+                <div class="left" id="mhcLBtn" onclick="scrollContainer(-1)"><span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></div>
+            </div>
+            <div class="rightCardButton right1" style="cursor:pointer">
+                <div class="right" id="mhcRBtn" onclick="scrollContainer(1)"><span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></div>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+        <label>Recently Viewed</label>
+    </div>
+    <div class="overallCont">
+        <div class="cardContainer">
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231027/TZ6X/653bd9f1ddf77915195f0f2d/nike-black-running-men-revolution-7-lace-up-running-shoes.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3,326</label><label> <s>₹8999</s><strong class="str"> (45%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230728/EdwT/64c3ceb9a9b42d15c9786b2c/armani-exchange-navy-blue-%26-brown-classic-reversible-leather-belt-with-logo-buckle-closure.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>ARMANI EXCHANGE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Reversible Leather Belt with Logo Bu...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹4,949</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230906/pUSW/64f8d9e9ddf7791519ba7013/netplay-black-sweat-shirts-placement-logo-embroidered-regular-fit-sweatshirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230906/q007/64f8bb86afa4cf41f5c737ad/netplay-light-blue-sweat-shirts-placement-logo-embroidered-regular-fit-sweatshirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230907/4KSN/64f9bbc1ddf7791519c28966/netplay-green-sweat-shirts-crew-neck-regular-fit-sweatshirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20230527/Klmw/64710ba842f9e729d7eded48/crocodile-black-polo-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20231012/8uZd/6527aa68afa4cf41f53d7bb1/puma-black-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20240215/RnDX/65cd157516fd2c6e6af9d80b/red-tape-blue-walking-men-sports-shoes-with-lace-fastening.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20240211/kSxR/65c8d11216fd2c6e6aef8722/red-tape-beige-lace-ups-men-low-top-lace-up-sneakers.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+            <div class="recentCard">
+                <div class="image">
+                    <img src="https://assets.ajio.com/medias/sys_master/root/20220215/vZwo/620aa1beaeb26921af9786bc/adidas-originals-forum-low-lace-up-casual-shoes.jpg"
+                        alt="shoes">
+                </div>
+                <div class="discription">
+                    <div class="brandName">
+                        <label>NIKE</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Revolution 7 Lace-Up Running S...</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                OFF)</strong></label>
+                    </div>
+                    <div class="quickview">
+                        <label>QUICK VIEW</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sideButton">
+            <div class="leftCardButton left2" style="cursor:pointer">
+                <div class="left" id="mhcLBtn" onclick="scrollContainer(-1)"><span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></div>
+            </div>
+            <div class="rightCardButton right2" style="cursor:pointer">
+                <div class="right" id="mhcRBtn" onclick="scrollContainer(1)"><span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></div>
+            </div>
+        </div>
+    </div>
+    <!-- container scrolling -->
+    <script>
+        function scrollContainer(direction) {
+            const overall = document.querySelectorAll('.cardContainer');
+            const button = document.querySelectorAll('.rightCardButton');
+            const lfButton = document.querySelectorAll('.leftCardButton');
+            const cardWidth = document.querySelector('.recentCard').offsetWidth;
+
+            button.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    overall[index].scrollBy({
+                        left: direction * cardWidth * 4,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            lfButton.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    overall[index].scrollBy({
+                        left: direction * cardWidth * 4,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

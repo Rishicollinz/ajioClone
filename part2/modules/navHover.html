@@ -125,7 +125,6 @@
             display: flex;
             flex-direction: row;
             margin-left: 10px;
-            margin-bottom: 10px;
         }
 
         .navbarRight .lower .label {
@@ -140,6 +139,8 @@
         .navbarRight .lower .label .men {
             letter-spacing: 0.8px;
             padding-right: 16px;
+
+            padding-bottom: 10px;
         }
 
         .navbarRight .lower .label .men:hover {
@@ -254,22 +255,106 @@
             /* Adjust this value based on your navbar height */
         }
 
-        .menSubList {
-            background-color: rgb(235, 227, 227);
+        /* men hover navbar  */
+        .menSubList,
+        .womenSubList {
             display: none;
-            background-color: white;
-
         }
 
-        .wrapper {
+        .menSubList .choice,
+        .womenSubList .choice {
+            border: solid;
+            border-width: 1px;
+            border-color: #bebdb5
+        }
+
+        .menSubList .brandItems,
+        .womenSubList .brandItems {
+            display: none;
+        }
+
+        .menSubList .items .category .title,
+        .menSubList .brandItems .category .title,
+        .womenSubList .items .category .title,
+        .womenSubList .brandItems .category .title {
+            font-family: 'Source Sans Pro';
+            color: #192c3d;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .menSubList .items .category .title:hover,
+        .menSubList .brandItems .category .title:hover,
+        .womenSubList .items .category .title:hover,
+        .womenSubList .brandItems .category .title:hover {
+            cursor: pointer;
+        }
+
+        .menSubList .items .category .categoryItems,
+        .menSubList .brandItems .category .categoryItems,
+        .womenSubList .items .category .categoryItems,
+        .womenSubList .brandItems .category .categoryItems {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .menSubList .items .category .categoryItems p,
+        .menSubList .brandItems .category .categoryItems p,
+        .womenSubList .items .category .categoryItems p,
+        .womenSubList .brandItems .category .categoryItems p {
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color: #03528f;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .menSubList .items .category .categoryItems p:hover,
+        .menSubList .brandItems .category .categoryItems p:hover,
+        .womenSubList .items .category .categoryItems p:hover,
+        .womenSubList .brandItems .category .categoryItems p:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .menSubList .choice .shopBy,
+        .womenSubList .choice .shopBy {
+            font-family: 'Source Sans Pro';
+            color: #bebdb5;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .menSubList .choice .categories,
+        .menSubList .choice .brands,
+        .womenSubList .choice .categories,
+        .womenSubList .choice .brands {
+            cursor: pointer;
+            font-family: 'Source Sans Pro';
+            padding: 10px;
+            margin: 0px;
+            border: 0px;
+            background-color: #f1f1ed;
+            color: black;
+            margin-right: 0px;
+        }
+
+        .wrapper,
+        .womenWrapper {
             position: absolute;
             background-color: white;
-            display:none;
-            top: 100px;
+            display: none;
+            top: 95px;
             left: 70px;
             z-index: 1;
             width: 89%;
-            height:100px;
+            height: 75%;
+            overflow-x: hidden;
+            overflow-y: auto;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
@@ -330,131 +415,682 @@
             </div>
         </div>
     </div>
+    <!-- men navbar hover  -->
     <div class="wrapper">
         <div class="menSubList">
-            <label>Shop By:</label>
-            <label class="categories">CATEGORIES</label>
-            <label class="brands">BRANDS</label>
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandItems">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="space">
-        <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
-            paragraph
-            is a group
-            of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
-            coherence of ideas
-            among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
-            single
-            sentence
-            that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
-            in a
-            paper is a
-            paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
-            just one
-            sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
-            In
-            this handout,
-            we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
-            paragraph.
-        </p>
-
-        <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
-            paragraph
-            is a group
-            of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
-            coherence of ideas
-            among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
-            single
-            sentence
-            that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
-            in a
-            paper is a
-            paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
-            just one
-            sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
-            In
-            this handout,
-            we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
-            paragraph.
-        </p>
-
-        <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
-            paragraph
-            is a group
-            of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
-            coherence of ideas
-            among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
-            single
-            sentence
-            that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
-            in a
-            paper is a
-            paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
-            just one
-            sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
-            In
-            this handout,
-            we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
-            paragraph.
-        </p>
-
-        <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
-            paragraph
-            is a group
-            of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
-            coherence of ideas
-            among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
-            single
-            sentence
-            that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
-            in a
-            paper is a
-            paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
-            just one
-            sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
-            In
-            this handout,
-            we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
-            paragraph.
-        </p>
-        <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
-            paragraph
-            is a group
-            of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
-            coherence of ideas
-            among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
-            single
-            sentence
-            that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
-            in a
-            paper is a
-            paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
-            just one
-            sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
-            In
-            this handout,
-            we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
-            paragraph.
-        </p>
-
+    <!-- women navbar hover  -->
+    <div class="womenWrapper">
+        <div class="womenSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandItems">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="blackbg">
+        <div class="space">
+            <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
+                paragraph
+                is a group
+                of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
+                coherence of ideas
+                among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
+                single
+                sentence
+                that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
+                in a
+                paper is a
+                paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
+                just one
+                sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
+                In
+                this handout,
+                we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
+                paragraph.
+            </p>
+
+            <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
+                paragraph
+                is a group
+                of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
+                coherence of ideas
+                among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
+                single
+                sentence
+                that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
+                in a
+                paper is a
+                paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
+                just one
+                sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
+                In
+                this handout,
+                we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
+                paragraph.
+            </p>
+
+            <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
+                paragraph
+                is a group
+                of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
+                coherence of ideas
+                among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
+                single
+                sentence
+                that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
+                in a
+                paper is a
+                paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
+                just one
+                sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
+                In
+                this handout,
+                we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
+                paragraph.
+            </p>
+
+            <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
+                paragraph
+                is a group
+                of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
+                coherence of ideas
+                among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
+                single
+                sentence
+                that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
+                in a
+                paper is a
+                paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
+                just one
+                sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
+                In
+                this handout,
+                we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
+                paragraph.
+            </p>
+            <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
+                paragraph
+                is a group
+                of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and
+                coherence of ideas
+                among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a
+                single
+                sentence
+                that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section
+                in a
+                paper is a
+                paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be
+                just one
+                sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea.
+                In
+                this handout,
+                we will refer to this as the “controlling idea,” because it controls what happens in the rest of the
+                paragraph.
+            </p>
+
+        </div>
+    </div>
+    <!-- men navbar hover script  -->
     <script>
-        let v = document.querySelector(".navbarRight .lower .label .men");
-        let lower = document.querySelector(".navbarRight .lower");
-        let wrap=document.querySelector('.wrapper');
-        let s = document.querySelector(".menSubList");
-        v.addEventListener('mouseenter', () => {
+        //men hover function
+        let men = document.querySelector(".navbarRight .lower .label .men");
+        let blackbg = document.querySelector(".blackbg");
+        let wrap = document.querySelector('.wrapper');
+        let menSL = document.querySelector(".menSubList");
+        let category = document.querySelector(".menSubList .choice .categories");
+        let categoryItems = document.querySelector(".menSubList .Items");
+        let brandItems = document.querySelector(".menSubList .brandItems");
+        let brandHover = document.querySelector(".menSubList .choice .brands");
+        men.addEventListener('mouseenter', () => {
             console.log("d");
-            s.style.display = "block";
-            wrap.style.display="block";
+            menSL.style.display = "block";
+            wrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "100";
+            category.style.fontWeight = "bold";
         });
 
-        lower.addEventListener('mouseleave', () => {
+        men.addEventListener('mouseout', () => {
             console.log("y");
-            s.style.display = "none";
-            wrap.style.display="none";
-        })
+            menSL.style.display = "none";
+            wrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        menSL.addEventListener('mouseover', () => {
+            console.log("d");
+            menSL.style.display = "block";
+            wrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        menSL.addEventListener('mouseout', () => {
+            console.log("y");
+            menSL.style.display = "none";
+            wrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        brandHover.addEventListener('mouseover', () => {
+            console.log("d");
+            categoryItems.style.display = "none";
+            brandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "bold";
+            category.style.fontWeight = "100";
+            brandHover.style.backgroundColor = "#d4d3cb";
+            category.style.backgroundColor = "#f1f1ed";
+        });
+        category.addEventListener('mouseover', () => {
+            console.log("d");
+            categoryItems.style.display = "block";
+            brandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "100";
+            category.style.fontWeight = "bold";
+            brandHover.style.backgroundColor = "#f1f1ed";
+            category.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- women navbar hover script  -->
+    <script>
+        //men hover function
+        let women = document.querySelector(".navbarRight .lower .label .women");
+        let womenWrap = document.querySelector('.womenWrapper');
+        let womenSL = document.querySelector(".womenSubList");
+        let womenCategory = document.querySelector(".womenSubList .choice .categories");
+        let womenCategoryItems = document.querySelector(".womenSubList .Items");
+        let womenBrandItems = document.querySelector(".womenSubList .brandItems");
+        let womenBrandHover = document.querySelector(".womenSubList .choice .brands");
+        women.addEventListener('mouseenter', () => {
+            womenSL.style.display = "block";
+            womenWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "100";
+            womenCategory.style.fontWeight = "bold";
+        });
+
+        women.addEventListener('mouseout', () => {
+            womenSL.style.display = "none";
+            womenWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        womenSL.addEventListener('mouseover', () => {
+            womenSL.style.display = "block";
+            womenWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        womenSL.addEventListener('mouseout', () => {
+            womenSL.style.display = "none";
+            womenWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        womenBrandHover.addEventListener('mouseover', () => {
+            womenCategoryItems.style.display = "none";
+            womenBrandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "bold";
+            womenCategory.style.fontWeight = "100";
+            womenBrandHover.style.backgroundColor = "#d4d3cb";
+            womenCategory.style.backgroundColor = "#f1f1ed";
+        });
+        womenCategory.addEventListener('mouseover', () => {
+            womenCategoryItems.style.display = "block";
+            womenBrandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "100";
+            womenCategory.style.fontWeight = "bold";
+            womenBrandHover.style.backgroundColor = "#f1f1ed";
+            womenCategory.style.backgroundColor = "#d4d3cb";
+        });
+
     </script>
 </body>
 
