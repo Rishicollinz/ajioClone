@@ -8,8 +8,391 @@
     <link rel="shortcut icon" href="https://assets.ajio.com/static/img/favicon.ico">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,200,0,0" />
     <title>Product Page</title>
     <style>
+        /*navbar*/
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro--70479481cd786114774c92e8d04a4028.70479481cd786114774c92e8d04a4028.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Helvetica';
+            src: url('../../fonts/Light.ttf') format('truetype');
+        }
+
+
+        .blueLine {
+            padding: 1.5px;
+            background-color: rgb(47, 66, 84);
+        }
+
+        .navbar-wrapper {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .navbar {
+            display: flex;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            min-width: 1360px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Optional: Add shadow for better visibility */
+        }
+
+        .navbarLeft {
+            border: solid;
+            flex: 0 0 400px;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .navbarLeft #site-logo {
+            margin-top: 21px;
+            margin-bottom: 20px;
+            margin-left: 73px;
+            height: 100%;
+            width: 130px;
+            cursor: pointer;
+
+        }
+
+        .navbarRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            flex: 0 0 935px;
+            /*31+*/
+        }
+
+        .navbarRight .upper {
+            display: flex;
+            flex-direction: row;
+            margin-left: 7px;
+            margin-bottom: 8px;
+        }
+
+        .navbarRight .upper .signIn {
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            padding: 10px;
+            color: #2C4152;
+            margin-left: 492px;
+        }
+
+        .navbarRight .upper .signIn:hover {
+            color: #406786;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .navbarRight .upper .customerCare {
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            padding: 10px;
+            color: #2C4152;
+        }
+
+        .navbarRight .upper .customerCare:hover {
+            color: #406786;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .navbarRight .upper .visitAjio {
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+        }
+
+        .navbarRight .upper .visitAjio:hover {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower {
+            display: flex;
+            flex-direction: row;
+            margin-left: 10px;
+        }
+
+        .navbarRight .lower .label {
+            font-family: 'Source Sans Pro';
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+
+        .navbarRight .lower .label .men {
+            letter-spacing: 0.8px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+        }
+
+        .navbarRight .lower .label .men:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower .label .women {
+            letter-spacing: 0.8px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .navbarRight .lower .label .women:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower .label .kids {
+            letter-spacing: 0.8px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .navbarRight .lower .label .kids:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower .label .beauty {
+            letter-spacing: 0.8px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .navbarRight .lower .label .beauty:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower .label .hak {
+            letter-spacing: 0.8px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .navbarRight .lower .label .hak:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .navbarRight .lower .lowerRight {
+            display: flex;
+            margin-left: 14px;
+        }
+
+        .searchbar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+        }
+
+        .searchbar input {
+            font-family: "Helvetica";
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            background-color: #fffded;
+        }
+
+        .searchbar img {
+            position: absolute;
+            width: auto;
+            height: 40%;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        #navbar-input {
+            /* border-radius: 15px; */
+            border-width: 1px;
+            border-color: #2C4152;
+            border-radius: 20px;
+            width: 260px;
+            height: 35px;
+        }
+
+        .navbarRight .lower .lowerRight .heartIcon {
+            height: 90%;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .navbarRight .lower .lowerRight .bagIcon {
+            height: 35px;
+            width: 35px;
+            background-color: #2C4152;
+            border-radius: 50%;
+            margin-left: 12px;
+            cursor: pointer;
+
+            span {
+                margin-top: 5px;
+                margin-left: 5px;
+                color: white;
+            }
+        }
+
+        /* men hover navbar  */
+        .menSubList,
+        .womenSubList,
+        .kidsSubList,
+        .beautySubList,
+        .hakSubList {
+            display: none;
+        }
+
+        .menSubList .choice,
+        .womenSubList .choice,
+        .kidsSubList .choice,
+        .beautySubList .choice,
+        .hakSubList .choice {
+            border-top: solid;
+            border-bottom: solid;
+            border-width: 1px;
+            border-color: #bebdb5
+        }
+
+        .menSubList .brandItems,
+        .womenSubList .brandItems {
+            display: none;
+        }
+
+        .menSubList .items .category .title,
+        .menSubList .brandItems .category .title,
+        .womenSubList .items .category .title,
+        .womenSubList .brandItems .category .title,
+        .kidsSubList .items .category .title,
+        .beautySubList .items .category .title,
+        .hakSubList .items .category .title,
+        .hakSubList .brandItems .category .title {
+            font-family: 'Source Sans Pro';
+            color: #192c3d;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .menSubList .items .category .title:hover,
+        .menSubList .brandItems .category .title:hover,
+        .womenSubList .items .category .title:hover,
+        .womenSubList .brandItems .category .title:hover,
+        .kidsSubList .items .category .title:hover,
+        .beautySubList .items .category .title:hover,
+        .hakSubList .items .category .title:hover,
+        .hakSubList .brandItems .category .title:hover {
+            cursor: pointer;
+        }
+
+        .menSubList .items .category .categoryItems,
+        .menSubList .brandItems .category .categoryItems,
+        .womenSubList .items .category .categoryItems,
+        .womenSubList .brandItems .category .categoryItems,
+        .kidsSubList .items .category .categoryItems,
+        .beautySubList .items .category .categoryItems,
+        .hakSubList .items .category .categoryItems,
+        .hakSubList .brandItems .category .categoryItems {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .menSubList .items .category .categoryItems p,
+        .menSubList .brandItems .category .categoryItems p,
+        .womenSubList .items .category .categoryItems p,
+        .womenSubList .brandItems .category .categoryItems p,
+        .kidsSubList .items .category .categoryItems p,
+        .beautySubList .items .category .categoryItems p,
+        .hakSubList .items .category .categoryItems p,
+        .hakSubList .brandItems .category .categoryItems p {
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color: #03528f;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .menSubList .items .category .categoryItems p:hover,
+        .menSubList .brandItems .category .categoryItems p:hover,
+        .womenSubList .items .category .categoryItems p:hover,
+        .womenSubList .brandItems .category .categoryItems p:hover,
+        .kidsSubList .items .category .categoryItems p:hover,
+        .beautySubList .items .category .categoryItems p:hover,
+        .hakSubList .items .category .categoryItems p:hover,
+        .hakSubList .brandItems .category .categoryItems p:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .menSubList .choice .shopBy,
+        .womenSubList .choice .shopBy,
+        .kidsSubList .choice .shopBy,
+        .beautySubList .choice .shopBy,
+        .hakSubList .choice .shopBy {
+            font-family: 'Source Sans Pro';
+            color: #bebdb5;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .menSubList .choice .categories,
+        .menSubList .choice .brands,
+        .womenSubList .choice .categories,
+        .womenSubList .choice .brands,
+        .kidsSubList .choice .categories,
+        .beautySubList .choice .categories,
+        .hakSubList .choice .categories,
+        .hakSubList .choice .brands {
+            cursor: pointer;
+            font-family: 'Source Sans Pro';
+            padding: 10px;
+            margin: 0px;
+            border: 0px;
+            background-color: #f1f1ed;
+            color: black;
+            margin-right: 0px;
+        }
+
+        .wrapper,
+        .womenWrapper,
+        .kidsWrapper,
+        .beautyWrapper,
+        .hakWrapper {
+            position: absolute;
+            background-color: white;
+            display: none;
+            top: 95px;
+            left: 70px;
+            z-index: 1;
+            width: 89%;
+            height: 75%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         /* Product Directory */
         @font-face {
             font-family: 'Source Sans Pro';
@@ -173,6 +556,172 @@
             color: red;
         }
 
+        /* recently viewed */
+        @font-face {
+            font-family: 'Lora Regular Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Bold--755b0d247421de7700dd580f3c5dc7d3.755b0d247421de7700dd580f3c5dc7d3.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lora Regular';
+            src: url('https://assets.ajio.com/static/assets/fonts/Lora-Regular--12c052959e60357f292b2bed94162d01.12c052959e60357f292b2bed94162d01.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro--70479481cd786114774c92e8d04a4028.70479481cd786114774c92e8d04a4028.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro-Bold--24b1bb81f77894c7ccc2e4d4ff2101fb.24b1bb81f77894c7ccc2e4d4ff2101fb.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro Semi Bold';
+            src: url('https://assets.ajio.com/static/assets/fonts/SourceSansPro-Semibold--f20dfd7873706e4dc6a6523bef4b845e.f20dfd7873706e4dc6a6523bef4b845e.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .similarStyles,.recentlyViewed{
+            font-family: 'Lora Regular Bold';
+            font-size: 18px;
+            color:#585858;
+        }
+
+
+        .recentCard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 338px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .recentCard .image img {
+            display: flex;
+            height: 256px;
+            width: 204px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .recentCard:hover .quickview {
+            bottom: 80px;
+            left: 0px;
+            display: block;
+        }
+
+        .quickview {
+            position: absolute;
+            z-index: 1;
+            display: none;
+            color: #2C4152;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 115px;
+            padding-right: 65px;
+
+        }
+
+        .brandName {
+            font-family: 'Lora Regular Bold';
+            font-size: 14px;
+            color: #866528;
+            cursor: pointer;
+        }
+
+        .productName {
+            font-family: 'Lora Regular';
+            font-size: 14px;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        .productDiscount {
+            cursor: pointer;
+        }
+
+        .productDiscount s {
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            cursor: pointer;
+            color: #866528;
+        }
+
+        .productDiscount .nor {
+            font-family: 'Source Sans Pro Semi Bold';
+            font-size: 16px;
+            color: #333333;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .productDiscount .str {
+            font-family: 'Source Sans Pro Bold';
+            font-size: 14px;
+            cursor: pointer;
+            color: #866528;
+        }
+
+        .cardContainer {
+            width: 1200px;
+            display: flex;
+            overflow-x: hidden;
+            margin-left: 75px;
+            position: relative;
+        }
+
+        .recentCard .discription {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .overallCont{
+            margin-bottom:30px;
+        }
+
+        .left1 {
+            position: absolute;
+            bottom: 0px;
+            left: 100px;
+        }
+
+        .right1 {
+            position: absolute;
+            bottom: 0px;
+            right: 100px;
+        }
+
+        .left2 {
+            position: absolute;
+            bottom: -410px;
+            left: 100px;
+        }
+
+        .right2 {
+            position: absolute;
+            bottom: -410px;
+            right: 100px;
+        }
+
+        .title {
+            display: flex;
+        }
+
         /*footer*/
         @font-face {
             font-family: 'Source Sans Pro';
@@ -190,7 +739,7 @@
 
         .inner {
             /* change marginLeft to 58 if any problem */
-            margin-left:0px; 
+            margin-left: 0px;
             margin-right: 58px;
             /* margin:50%; */
         }
@@ -290,204 +839,2030 @@
             background-color: #e7dfdf
         }
     </style>
+    <style>
+        .recentCont {
+            display: flex;
+            align-items: space-between;
+            justify-content: space-between;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+    
+        .recentCont .lineLeft p {
+            padding-left: 10px;
+            padding-right: 500px;
+            padding-top: 15px;
+            border-bottom: solid;
+            border-color: #CCC;
+            border-width: 1px;
+        }
+    
+        .recentCont .lineRight p {
+            padding-left: 10px;
+            padding-right: 500px;
+            padding-top: 15px;
+            border-bottom: solid;
+            border-color: #CCC;
+            border-width: 1px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <section class="ele"></section>
-        <label class="productDir">
-            <a>Home</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
-            <a>Men</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
-            <a>Western Wear</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
-            <a>Tshirts</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
-            <a>Men Ess Slim Fit Polo T-Shirt</a>
-        </label>
-        <div class="productContainer">
-            <div class="verticalCarousel">
-                1
+    <div class="blueLine"></div>
+    <div class="navbar-wrapper">
+        <div class="navbar">
+            <div class="navbarLeft">
+                <img id="site-logo" src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="">
             </div>
-            <div class="productImage">
-                2
+            <div class="navbarRight">
+                <div class="upper">
+                    <div class="signIn">
+                        <a>Sign In / Join AJIO</a>
+                    </div>
+                    <div class="customerCare">
+                        <a>Customer Care</a>
+                    </div>
+                    <div class="visitAjio">
+                        <a>Visit AJIOLUXE</a>
+                    </div>
+                </div>
+                <div class="lower">
+                    <div class="label">
+                        <div class="men">
+                            MEN
+                        </div>
+                        <div class="women">
+                            WOMEN
+                        </div>
+                        <div class="kids">
+                            KIDS
+                        </div>
+                        <div class="beauty">
+                            BEAUTY
+                        </div>
+                        <div class="hak">
+                            HOME AND KITCHEN
+                        </div>
+                    </div>
+                    <div class="lowerRight">
+                        <div class="searchbar">
+                            <input id="navbar-input" type="text" placeholder=" Search AJIO">
+                            <img src="../../images/search_icon.png">
+                        </div>
+                        <div class="heartIcon">
+                            <img id="bar-img" src="https://assets.ajio.com/static/img/wishlistIcon.svg" alt="">
+                        </div>
+                        <div class="bagIcon">
+                            <span class="material-symbols-rounded">
+                                shopping_bag
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="productDescription">
-                <div class="brandName">
-                    <label>PUMA</label>
-                </div>
-                <div class="productName">
-                    <label>Men Ess Slim Fit Polo T-Shirt</label>
-                </div>
-                <div class="ratings">
-                    <div class="ratingIcon">
-                        <div class="star">
-                            <label>4.2&nbsp;</label>
-                            <div class="inner"><img src="https://assets.ajio.com/static/img/green_star_pdp.svg" alt="">
+        </div>
+    </div>
+    <!-- men navbar hover  -->
+    <div class="wrapper">
+        <div class="menSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
                             </div>
                         </div>
                     </div>
-                    <label class="ratingLabel">&ensp;199 Ratings</label>
-                </div>
-                <div class="productPrice">
-                    <label>₹833</label>
-                </div>
-                <div class="productDiscount">
-                    <label>MRP <s>₹1699</s><strong class="str"> (51% OFF)</strong></label>
-                </div>
-                <div class="taxlabel">
-                    <label>Price inclusive of all taxes</label>
-                </div>
-                <div class="offerBox">
-                    <div class="offer">
-                        <label>Use Code BOLD </label>
-                        <a>T&C</a>
-                    </div>
-                    <div class="getIt">
-                        <div class="getIt1">
-                            <label>Get it for ₹650</label>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
                         </div>
-                        <div class="getIt2">
-                            <label>Above. Max Discount Rs.600</label>
-                            <a>View All Products></a>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="bannerExchange">
-        <div class="row justify-content-center">
-            <div class="col exchange text-center">
-                <img src="/images/exchange.png" alt="easyExchange">
-            </div>
-            <div class="col hand text-center">
-                <img src="/images/hand.png" alt="handpicked">
-            </div>
-            <div class="col assured text-center">
-                <img src="/images/assured.png" alt="assuredQuality">
-            </div>
-        </div>
-    </div>
-    <div class="bannerExchangeText">
-        <div class="row">
-            <div class="col">
-                <label style="cursor:auto"><strong>
-                        Easy Exchange
-                    </strong></label>
-            </div>
-            <div class="col">
-                <label style="cursor:auto"><strong>
-                        100% Handpicked
-                    </strong></label>
-            </div>
-            <div class="col assured">
-                <label style="cursor:auto"><strong>
-                        Assured Quality
-                    </strong></label>
-            </div>
-        </div>
-    </div>
-
-    <footer style="position: relative;">
-        <div class="container-fluid outer">
-            <div class="inner">
-                <br>
+            <div class="brandItems">
                 <div class="row">
                     <div class="col">
-                        <a href="" class="innerTitle">Ajio</a>
-                        <a href="">Who We are</a>
-                        <a href="">Join Our Team</a>
-                        <a href="">Terms & Conditions</a>
-                        <a href="">We Respect Your Privacy</a>
-                        <a href="">Fees & Payments</a>
-                        <a href="">Returns & Refunds Policy</a>
-                        <a href="">Promotions Terms & Conditions</a>
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
-                        <a href="" class="innerTitle">Help</a>
-                        <a href="">Track Your Order</a>
-                        <a href="">Frequently Asked Questions</a>
-                        <a href="">Returns</a>
-                        <a href="">Cancellations</a>
-                        <a href="">Payments</a>
-                        <a href="">Customer Care</a>
-                        <a href="">How Do I Redeem My Coupon</a>
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
-                        <a href="" class="innerTitle">Shop by</a>
-                        <a href="">Men</a>
-                        <a href="">Women</a>
-                        <a href="">Kids</a>
-                        <a href="">Indie</a>
-                        <a href="">Stores</a>
-                        <a href="">New Arrivals</a>
-                        <a href="">Brand Directory</a>
-                        <a href="">Home</a>
-                        <a href="">Collections</a>
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
-                        <a href="" class="innerTitle">Follow us</a>
-                        <a href="">Facebook</a>
-                        <a href="">Instagram-AJIOlife</a>
-                        <a href="">Instagram-AJIO LUXE</a>
-                        <a href="">Twitter</a>
-                        <a href="">Pinterest</a>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
                     </div>
                 </div>
-                <br>
-                <hr>
+            </div>
+        </div>
+    </div>
+    <!-- women navbar hover  -->
+    <div class="womenWrapper">
+        <div class="womenSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
                 <div class="row">
-                    <div class="col-10">
-                        <label class="innerTitle">Payment methods</label>
-                        <br>
-                        <img src="../../images/netbankIcon.png" alt="netbankIcon">
-                        <img src="../../images/visaIcon.png" alt="visaIcon">
-                        <img src="../../images/mastercardIcon.png" alt="mastercardIcon">
-                        <img src="../../images/codIcon.png" alt="codIcon">
-                        <img src="../../images/jioMoneyIcon.png" alt="jioMoneyIcon">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">CURVE SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">BEAUTY</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FUSION WEAR</label>
+                            <div class="categoryItems">
+                                <p>Dresses & Gowns</p>
+                                <p>Kurtas</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Pants & Shorts</p>
+                                <p>Jackets & Shrugs</p>
+                                <p>Shirts, Tops & Tunics</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-2">
-                        <div class="secure">
-                            <label class="innerTitle">Secure systems</label>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ETHNIC WEAR</label>
+                            <div class="categoryItems">
+                                <p>Kurtas</p>
+                                <p>Dress Material</p>
+                                <p>Salwars & Churidars</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Sarees</p>
+                                <p>Dupattas</p>
+                                <p>Kurta Suit Sets</p>
+                                <p>Blouses</p>
+                                <p>Leggings</p>
+                                <p>Skirts & Ghagras</p>
+                                <p>Shawls & Wraps</p>
+                                <p>Palazzos & Culottes</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                                <p>Fashion Jewellery</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">LINGERIE & INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Bras</p>
+                                <p>Panties</p>
+                                <p>Camisoles & Slips</p>
+                                <p>Maternity Wear</p>
+                                <p>Thermal Wear</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                                <p>Bag, Belts And Wallets</p>
+                                <p>Stoles And Stockings</p>
+                                <p>Caps</p>
+                                <p>Luggage & Trolleys</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Dresses Under 999</p>
+                                <p>Footwear Under 799</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flat Sandals</p>
+                                <p>Sports Shoes</p>
+                                <p>Flip Flop & Slippers</p>
+                                <p>Heeled Sandals</p>
+                                <p>Heeled Shoes</p>
+                                <p>Boots</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Tops</p>
+                                <p>T-Shirts</p>
+                                <p>Jeans & Jeggings</p>
+                                <p>Dresses</p>
+                                <p>Trousers & Pants</p>
+                                <p>Shirts</p>
+                                <p>Track Pants</p>
+                                <p>Skirts & Shorts</p>
+                                <p>Jackets & Coats</p>
+                                <p>Jumpsuits & Playsuits</p>
+                                <p>Shrugs & Boleros</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Sweaters & Cardigans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandItems">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kids navbar hover  -->
+    <div class="kidsWrapper">
+        <div class="kidsSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- beauty navbar hover  -->
+    <div class="beautyWrapper">
+        <div class="beautySubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">CURVE SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">BEAUTY</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FUSION WEAR</label>
+                            <div class="categoryItems">
+                                <p>Dresses & Gowns</p>
+                                <p>Kurtas</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Pants & Shorts</p>
+                                <p>Jackets & Shrugs</p>
+                                <p>Shirts, Tops & Tunics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ETHNIC WEAR</label>
+                            <div class="categoryItems">
+                                <p>Kurtas</p>
+                                <p>Dress Material</p>
+                                <p>Salwars & Churidars</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Sarees</p>
+                                <p>Dupattas</p>
+                                <p>Kurta Suit Sets</p>
+                                <p>Blouses</p>
+                                <p>Leggings</p>
+                                <p>Skirts & Ghagras</p>
+                                <p>Shawls & Wraps</p>
+                                <p>Palazzos & Culottes</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                                <p>Fashion Jewellery</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">LINGERIE & INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Bras</p>
+                                <p>Panties</p>
+                                <p>Camisoles & Slips</p>
+                                <p>Maternity Wear</p>
+                                <p>Thermal Wear</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                                <p>Bag, Belts And Wallets</p>
+                                <p>Stoles And Stockings</p>
+                                <p>Caps</p>
+                                <p>Luggage & Trolleys</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Dresses Under 999</p>
+                                <p>Footwear Under 799</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flat Sandals</p>
+                                <p>Sports Shoes</p>
+                                <p>Flip Flop & Slippers</p>
+                                <p>Heeled Sandals</p>
+                                <p>Heeled Shoes</p>
+                                <p>Boots</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Tops</p>
+                                <p>T-Shirts</p>
+                                <p>Jeans & Jeggings</p>
+                                <p>Dresses</p>
+                                <p>Trousers & Pants</p>
+                                <p>Shirts</p>
+                                <p>Track Pants</p>
+                                <p>Skirts & Shorts</p>
+                                <p>Jackets & Coats</p>
+                                <p>Jumpsuits & Playsuits</p>
+                                <p>Shrugs & Boleros</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Sweaters & Cardigans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hak navbar hover  -->
+    <div class="hakWrapper">
+        <div class="hakSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandItems">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- products  -->
+    <div class="blackbg">
+        <div class="container-fluid">
+            <section class="ele"></section>
+            <label class="productDir">
+                <a>Home</a>
+                &nbsp;&nbsp;/&nbsp;&nbsp;
+                <a>Men</a>
+                &nbsp;&nbsp;/&nbsp;&nbsp;
+                <a>Western Wear</a>
+                &nbsp;&nbsp;/&nbsp;&nbsp;
+                <a>Tshirts</a>
+                &nbsp;&nbsp;/&nbsp;&nbsp;
+                <a>Men Ess Slim Fit Polo T-Shirt</a>
+            </label>
+            <div class="productContainer">
+                <div class="verticalCarousel">
+                    1
+                </div>
+                <div class="productImage">
+                    2
+                </div>
+                <div class="productDescription">
+                    <div class="brandName">
+                        <label>PUMA</label>
+                    </div>
+                    <div class="productName">
+                        <label>Men Ess Slim Fit Polo T-Shirt</label>
+                    </div>
+                    <div class="ratings">
+                        <div class="ratingIcon">
+                            <div class="star">
+                                <label>4.2&nbsp;</label>
+                                <div class="inner"><img src="https://assets.ajio.com/static/img/green_star_pdp.svg"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <label class="ratingLabel">&ensp;199 Ratings</label>
+                    </div>
+                    <div class="productPrice">
+                        <label>₹833</label>
+                    </div>
+                    <div class="productDiscount">
+                        <label>MRP <s>₹1699</s><strong class="str"> (51% OFF)</strong></label>
+                    </div>
+                    <div class="taxlabel">
+                        <label>Price inclusive of all taxes</label>
+                    </div>
+                    <div class="offerBox">
+                        <div class="offer">
+                            <label>Use Code BOLD </label>
+                            <a>T&C</a>
+                        </div>
+                        <div class="getIt">
+                            <div class="getIt1">
+                                <label>Get it for ₹650</label>
+                            </div>
+                            <div class="getIt2">
+                                <label>Above. Max Discount Rs.600</label>
+                                <a>View All Products></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- recently and similar styles  -->
+        <div class="recentCont">
+            <div class="lineLeft">
+                <p></p>
+            </div>
+            <div class="similarStyles">
+                <label>Similar Styles</label>
+            </div>
+            <div class="lineRight">
+                <p></p>
+            </div>
+        </div>
+        <div class="overallCont">
+            <div class="cardContainer">
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/8uZd/6527aa68afa4cf41f53d7bb1/puma-black-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/BCLi/6527aa65ddf779151935df66/puma-white-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/qBBz/6527aa71afa4cf41f53d7c67/puma-grey-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/9h7T/6527aa75ddf779151935e069/puma-red-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/HeAo/6527aa76afa4cf41f53d7cb9/puma-pink-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/uNUr/6527aa6bddf779151935dfe4/puma-green-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/1Eey/6527aa68afa4cf41f53d7bb7/puma-yellow-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230629/zyBM/649cbe36eebac147fc2f6290/maniac-blue-polo-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230624/gOnf/64964d64a9b42d15c9d9b442/crocodile-blue-polo-slim-fit-striped-polo-t-shirt-with-short-sleeves.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230629/0bhq/649cefe4eebac147fc3657ca/98%C2%B0north-blue-polo-slim-fit-polo-t-shirt-with-patch-pocket.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sideButton">
+                <div class="leftCardButton left1" style="cursor:pointer">
+                    <div class="left" id="mhcLBtn" onclick="scrollContainer(-1)"><span
+                            class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></div>
+                </div>
+                <div class="rightCardButton right1" style="cursor:pointer">
+                    <div class="right" id="mhcRBtn" onclick="scrollContainer(1)"><span
+                            class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></div>
+                </div>
+            </div>
+        </div>
+        <div class="recentCont">
+            <div class="lineLeft"><p></p></div>
+            <div class="recentlyViewed">
+                <label>Recently Viewed</label>
+            </div>
+            <div class="lineRight"><p></p></div>
+        </div>
+        
+        <div class="overallCont">
+            <div class="cardContainer">
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231027/TZ6X/653bd9f1ddf77915195f0f2d/nike-black-running-men-revolution-7-lace-up-running-shoes.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3,326</label><label> <s>₹8999</s><strong class="str"> (45%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230728/EdwT/64c3ceb9a9b42d15c9786b2c/armani-exchange-navy-blue-%26-brown-classic-reversible-leather-belt-with-logo-buckle-closure.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>ARMANI EXCHANGE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Reversible Leather Belt with Logo Bu...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹4,949</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230906/pUSW/64f8d9e9ddf7791519ba7013/netplay-black-sweat-shirts-placement-logo-embroidered-regular-fit-sweatshirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230906/q007/64f8bb86afa4cf41f5c737ad/netplay-light-blue-sweat-shirts-placement-logo-embroidered-regular-fit-sweatshirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230907/4KSN/64f9bbc1ddf7791519c28966/netplay-green-sweat-shirts-crew-neck-regular-fit-sweatshirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230527/Klmw/64710ba842f9e729d7eded48/crocodile-black-polo-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20231012/8uZd/6527aa68afa4cf41f53d7bb1/puma-black-polo-men-ess-slim-fit-polo-t-shirt.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20240215/RnDX/65cd157516fd2c6e6af9d80b/red-tape-blue-walking-men-sports-shoes-with-lace-fastening.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20240211/kSxR/65c8d11216fd2c6e6aef8722/red-tape-beige-lace-ups-men-low-top-lace-up-sneakers.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="recentCard">
+                    <div class="image">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20220215/vZwo/620aa1beaeb26921af9786bc/adidas-originals-forum-low-lace-up-casual-shoes.jpg"
+                            alt="shoes">
+                    </div>
+                    <div class="discription">
+                        <div class="brandName">
+                            <label>NIKE</label>
+                        </div>
+                        <div class="productName">
+                            <label>Men Revolution 7 Lace-Up Running S...</label>
+                        </div>
+                        <div class="productDiscount">
+                            <label class="nor">₹3326</label><label> <s>₹3695</s><strong class="str"> (10%
+                                    OFF)</strong></label>
+                        </div>
+                        <div class="quickview">
+                            <label>QUICK VIEW</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sideButton">
+                <div class="leftCardButton left2" style="cursor:pointer">
+                    <div class="left" id="mhcLBtn" onclick="scrollContainer(-1)"><span
+                            class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></div>
+                </div>
+                <div class="rightCardButton right2" style="cursor:pointer">
+                    <div class="right" id="mhcRBtn" onclick="scrollContainer(1)"><span
+                            class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></div>
+                </div>
+            </div>
+        </div>
+        <!-- banner quality  -->
+        <div class="bannerExchange">
+            <div class="row justify-content-center">
+                <div class="col exchange text-center">
+                    <img src="/images/exchange.png" alt="easyExchange">
+                </div>
+                <div class="col hand text-center">
+                    <img src="/images/hand.png" alt="handpicked">
+                </div>
+                <div class="col assured text-center">
+                    <img src="/images/assured.png" alt="assuredQuality">
+                </div>
+            </div>
+        </div>
+        <div class="bannerExchangeText">
+            <div class="row">
+                <div class="col">
+                    <label style="cursor:auto"><strong>
+                            Easy Exchange
+                        </strong></label>
+                </div>
+                <div class="col">
+                    <label style="cursor:auto"><strong>
+                            100% Handpicked
+                        </strong></label>
+                </div>
+                <div class="col assured">
+                    <label style="cursor:auto"><strong>
+                            Assured Quality
+                        </strong></label>
+                </div>
+            </div>
+        </div>
+
+        <footer style="position: relative;">
+            <div class="container-fluid outer">
+                <div class="inner">
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <a href="" class="innerTitle">Ajio</a>
+                            <a href="">Who We are</a>
+                            <a href="">Join Our Team</a>
+                            <a href="">Terms & Conditions</a>
+                            <a href="">We Respect Your Privacy</a>
+                            <a href="">Fees & Payments</a>
+                            <a href="">Returns & Refunds Policy</a>
+                            <a href="">Promotions Terms & Conditions</a>
+                        </div>
+                        <div class="col">
+                            <a href="" class="innerTitle">Help</a>
+                            <a href="">Track Your Order</a>
+                            <a href="">Frequently Asked Questions</a>
+                            <a href="">Returns</a>
+                            <a href="">Cancellations</a>
+                            <a href="">Payments</a>
+                            <a href="">Customer Care</a>
+                            <a href="">How Do I Redeem My Coupon</a>
+                        </div>
+                        <div class="col">
+                            <a href="" class="innerTitle">Shop by</a>
+                            <a href="">Men</a>
+                            <a href="">Women</a>
+                            <a href="">Kids</a>
+                            <a href="">Indie</a>
+                            <a href="">Stores</a>
+                            <a href="">New Arrivals</a>
+                            <a href="">Brand Directory</a>
+                            <a href="">Home</a>
+                            <a href="">Collections</a>
+                        </div>
+                        <div class="col">
+                            <a href="" class="innerTitle">Follow us</a>
+                            <a href="">Facebook</a>
+                            <a href="">Instagram-AJIOlife</a>
+                            <a href="">Instagram-AJIO LUXE</a>
+                            <a href="">Twitter</a>
+                            <a href="">Pinterest</a>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="row">
+                        <div class="col-10">
+                            <label class="innerTitle">Payment methods</label>
                             <br>
-                            <img src="../../images/sslIcon.png" alt="sslIcon">
+                            <img src="../../images/netbankIcon.png" alt="netbankIcon">
+                            <img src="../../images/visaIcon.png" alt="visaIcon">
+                            <img src="../../images/mastercardIcon.png" alt="mastercardIcon">
+                            <img src="../../images/codIcon.png" alt="codIcon">
+                            <img src="../../images/jioMoneyIcon.png" alt="jioMoneyIcon">
+                        </div>
+                        <div class="col-2">
+                            <div class="secure">
+                                <label class="innerTitle">Secure systems</label>
+                                <br>
+                                <img src="../../images/sslIcon.png" alt="sslIcon">
+                            </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                 </div>
-                <br>
-                <br>
-            </div>
-    </footer>
+        </footer>
+    </div>
     <!-- scroll to top -->
     <button onclick="topFunction()" id="keyup" title="Go to top">
         <span class="material-symbols-outlined">
             expand_less
         </span>
     </button>
+    <!-- men navbar hover script  -->
+    <script>
+        //men hover function
+        let men = document.querySelector(".navbarRight .lower .label .men");
+        let blackbg = document.querySelector(".blackbg");
+        let wrap = document.querySelector('.wrapper');
+        let menSL = document.querySelector(".menSubList");
+        let category = document.querySelector(".menSubList .choice .categories");
+        let categoryItems = document.querySelector(".menSubList .Items");
+        let brandItems = document.querySelector(".menSubList .brandItems");
+        let brandHover = document.querySelector(".menSubList .choice .brands");
+        men.addEventListener('mouseenter', () => {
+            console.log("d");
+            men.style.fontWeight = "bold";
+            menSL.style.display = "block";
+            wrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "100";
+            category.style.fontWeight = "bold";
+        });
+
+        men.addEventListener('mouseout', () => {
+            console.log("y");
+            menSL.style.display = "none";
+            men.style.fontWeight = "100";
+            wrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        menSL.addEventListener('mouseover', () => {
+            console.log("d");
+            men.style.fontWeight = "bold";
+            menSL.style.display = "block";
+            wrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        menSL.addEventListener('mouseout', () => {
+            console.log("y");
+            men.style.fontWeight = "100";
+            menSL.style.display = "none";
+            wrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        brandHover.addEventListener('mouseover', () => {
+            console.log("d");
+            categoryItems.style.display = "none";
+            brandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "bold";
+            category.style.fontWeight = "100";
+            brandHover.style.backgroundColor = "#d4d3cb";
+            category.style.backgroundColor = "#f1f1ed";
+        });
+        category.addEventListener('mouseover', () => {
+            console.log("d");
+            categoryItems.style.display = "block";
+            brandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            brandHover.style.fontWeight = "100";
+            category.style.fontWeight = "bold";
+            brandHover.style.backgroundColor = "#f1f1ed";
+            category.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- women navbar hover script  -->
+    <script>
+        let women = document.querySelector(".navbarRight .lower .label .women");
+        let womenWrap = document.querySelector('.womenWrapper');
+        let womenSL = document.querySelector(".womenSubList");
+        let womenCategory = document.querySelector(".womenSubList .choice .categories");
+        let womenCategoryItems = document.querySelector(".womenSubList .Items");
+        let womenBrandItems = document.querySelector(".womenSubList .brandItems");
+        let womenBrandHover = document.querySelector(".womenSubList .choice .brands");
+        women.addEventListener('mouseenter', () => {
+            women.style.fontWeight = "bold";
+            womenSL.style.display = "block";
+            womenWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "100";
+            womenCategory.style.fontWeight = "bold";
+        });
+
+        women.addEventListener('mouseout', () => {
+            women.style.fontWeight = "100";
+            womenSL.style.display = "none";
+            womenWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        womenSL.addEventListener('mouseover', () => {
+            women.style.fontWeight = "bold";
+            womenSL.style.display = "block";
+            womenWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        womenSL.addEventListener('mouseout', () => {
+            women.style.fontWeight = "100";
+            womenSL.style.display = "none";
+            womenWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        womenBrandHover.addEventListener('mouseover', () => {
+            womenCategoryItems.style.display = "none";
+            womenBrandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "bold";
+            womenCategory.style.fontWeight = "100";
+            womenBrandHover.style.backgroundColor = "#d4d3cb";
+            womenCategory.style.backgroundColor = "#f1f1ed";
+        });
+        womenCategory.addEventListener('mouseover', () => {
+            womenCategoryItems.style.display = "block";
+            womenBrandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            womenBrandHover.style.fontWeight = "100";
+            womenCategory.style.fontWeight = "bold";
+            womenBrandHover.style.backgroundColor = "#f1f1ed";
+            womenCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- kids navbar hover script  -->
+    <script>
+        let kids = document.querySelector(".navbarRight .lower .label .kids");
+        let kidsWrap = document.querySelector('.kidsWrapper');
+        let kidsSL = document.querySelector(".kidsSubList");
+        let kidsCategory = document.querySelector(".kidsSubList .choice .categories");
+        let kidsCategoryItems = document.querySelector(".kidsSubList .Items");
+        kids.addEventListener('mouseenter', () => {
+            kids.style.fontWeight = "bold";
+            kidsSL.style.display = "block";
+            kidsWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            kidsCategory.style.fontWeight = "bold";
+        });
+
+        kids.addEventListener('mouseout', () => {
+            kids.style.fontWeight = "100";
+            kidsSL.style.display = "none";
+            kidsWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        kidsSL.addEventListener('mouseover', () => {
+            kids.style.fontWeight = "bold";
+            kidsSL.style.display = "block";
+            kidsWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        kidsSL.addEventListener('mouseout', () => {
+            kids.style.fontWeight = "100";
+            kidsSL.style.display = "none";
+            kidsWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        kidsCategory.addEventListener('mouseover', () => {
+            kidsCategoryItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            kidsCategory.style.fontWeight = "bold";
+            kidsCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- beauty navbar hover script  -->
+    <script>
+        let beauty = document.querySelector(".navbarRight .lower .label .beauty");
+        let beautyWrap = document.querySelector('.beautyWrapper');
+        let beautySL = document.querySelector(".beautySubList");
+        let beautyCategory = document.querySelector(".beautySubList .choice .categories");
+        let beautyCategoryItems = document.querySelector(".beautySubList .Items");
+        beauty.addEventListener('mouseenter', () => {
+            beauty.style.fontWeight = "bold";
+            beautySL.style.display = "block";
+            beautyWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            beautyCategory.style.fontWeight = "bold";
+        });
+
+        beauty.addEventListener('mouseout', () => {
+            beauty.style.fontWeight = "100";
+            beautySL.style.display = "none";
+            beautyWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        beautySL.addEventListener('mouseover', () => {
+            beauty.style.fontWeight = "bold";
+            beautySL.style.display = "block";
+            beautyWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        beautySL.addEventListener('mouseout', () => {
+            beauty.style.fontWeight = "100";
+            beautySL.style.display = "none";
+            beautyWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        beautyCategory.addEventListener('mouseover', () => {
+            beautyCategoryItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            beautyCategory.style.fontWeight = "bold";
+            beautyCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- hak navbar hover script  -->
+    <script>
+        let hak = document.querySelector(".navbarRight .lower .label .hak");
+        let hakWrap = document.querySelector('.hakWrapper');
+        let hakSL = document.querySelector(".hakSubList");
+        let hakCategory = document.querySelector(".hakSubList .choice .categories");
+        let hakCategoryItems = document.querySelector(".hakSubList .Items");
+        let hakBrandItems = document.querySelector(".hakSubList .brandItems");
+        let hakBrandHover = document.querySelector(".hakSubList .choice .brands");
+        hak.addEventListener('mouseenter', () => {
+            hak.style.fontWeight = "bold";
+            hakSL.style.display = "block";
+            hakWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "100";
+            hakCategory.style.fontWeight = "bold";
+        });
+
+        hak.addEventListener('mouseout', () => {
+            hak.style.fontWeight = "100";
+            hakSL.style.display = "none";
+            hakWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        hakSL.addEventListener('mouseover', () => {
+            hak.style.fontWeight = "bold";
+            hakSL.style.display = "block";
+            hakWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        hakSL.addEventListener('mouseout', () => {
+            hak.style.fontWeight = "100";
+            hakSL.style.display = "none";
+            hakWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        hakBrandHover.addEventListener('mouseover', () => {
+            hakCategoryItems.style.display = "none";
+            hakBrandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "bold";
+            hakCategory.style.fontWeight = "100";
+            hakBrandHover.style.backgroundColor = "#d4d3cb";
+            hakCategory.style.backgroundColor = "#f1f1ed";
+        });
+        hakCategory.addEventListener('mouseover', () => {
+            hakCategoryItems.style.display = "block";
+            hakBrandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "100";
+            hakCategory.style.fontWeight = "bold";
+            hakBrandHover.style.backgroundColor = "#f1f1ed";
+            hakCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- container scrolling -->
+    <script>
+        function scrollContainer(direction) {
+            const overall = document.querySelectorAll('.cardContainer');
+            const button = document.querySelectorAll('.rightCardButton');
+            const lfButton = document.querySelectorAll('.leftCardButton');
+            const cardWidth = document.querySelector('.recentCard').offsetWidth;
+
+            button.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    overall[index].scrollBy({
+                        left: direction * cardWidth * 4,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            lfButton.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    overall[index].scrollBy({
+                        left: direction * cardWidth * 4,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+    </script>
 </body>
+<!-- scroll to top -->
 <script>
     //scroll to top
     let mybutton = document.getElementById("keyup");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () { scrollFunction() };
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
         }
+    }
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 </script>
 
 </html>

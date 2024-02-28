@@ -74,7 +74,7 @@
             display: flex;
             flex-direction: row;
             margin-left: 7px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .navbarRight .upper .signIn {
@@ -139,8 +139,7 @@
         .navbarRight .lower .label .men {
             letter-spacing: 0.8px;
             padding-right: 16px;
-
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .navbarRight .lower .label .men:hover {
@@ -201,6 +200,7 @@
             position: relative;
             display: flex;
             align-items: center;
+            margin-top: -10px;
         }
 
         .searchbar input {
@@ -214,7 +214,7 @@
         .searchbar img {
             position: absolute;
             width: auto;
-            height: 60%;
+            height: 40%;
             right: 1rem;
             cursor: pointer;
         }
@@ -257,12 +257,18 @@
 
         /* men hover navbar  */
         .menSubList,
-        .womenSubList {
+        .womenSubList,
+        .kidsSubList,
+        .beautySubList,
+        .hakSubList {
             display: none;
         }
 
         .menSubList .choice,
-        .womenSubList .choice {
+        .womenSubList .choice,
+        .kidsSubList .choice,
+        .beautySubList .choice,
+        .hakSubList .choice {
             border: solid;
             border-width: 1px;
             border-color: #bebdb5
@@ -276,7 +282,11 @@
         .menSubList .items .category .title,
         .menSubList .brandItems .category .title,
         .womenSubList .items .category .title,
-        .womenSubList .brandItems .category .title {
+        .womenSubList .brandItems .category .title,
+        .kidsSubList .items .category .title,
+        .beautySubList .items .category .title,
+        .hakSubList .items .category .title,
+        .hakSubList .brandItems .category .title {
             font-family: 'Source Sans Pro';
             color: #192c3d;
             font-size: 14px;
@@ -289,14 +299,22 @@
         .menSubList .items .category .title:hover,
         .menSubList .brandItems .category .title:hover,
         .womenSubList .items .category .title:hover,
-        .womenSubList .brandItems .category .title:hover {
+        .womenSubList .brandItems .category .title:hover,
+        .kidsSubList .items .category .title:hover,
+        .beautySubList .items .category .title:hover,
+        .hakSubList .items .category .title:hover,
+        .hakSubList .brandItems .category .title:hover {
             cursor: pointer;
         }
 
         .menSubList .items .category .categoryItems,
         .menSubList .brandItems .category .categoryItems,
         .womenSubList .items .category .categoryItems,
-        .womenSubList .brandItems .category .categoryItems {
+        .womenSubList .brandItems .category .categoryItems,
+        .kidsSubList .items .category .categoryItems,
+        .beautySubList .items .category .categoryItems,
+        .hakSubList .items .category .categoryItems,
+        .hakSubList .brandItems .category .categoryItems {
             margin-top: 5px;
             margin-left: 10px;
         }
@@ -304,7 +322,11 @@
         .menSubList .items .category .categoryItems p,
         .menSubList .brandItems .category .categoryItems p,
         .womenSubList .items .category .categoryItems p,
-        .womenSubList .brandItems .category .categoryItems p {
+        .womenSubList .brandItems .category .categoryItems p,
+        .kidsSubList .items .category .categoryItems p,
+        .beautySubList .items .category .categoryItems p,
+        .hakSubList .items .category .categoryItems p,
+        .hakSubList .brandItems .category .categoryItems p {
             font-family: 'Source Sans Pro';
             font-size: 14px;
             color: #03528f;
@@ -316,13 +338,20 @@
         .menSubList .items .category .categoryItems p:hover,
         .menSubList .brandItems .category .categoryItems p:hover,
         .womenSubList .items .category .categoryItems p:hover,
-        .womenSubList .brandItems .category .categoryItems p:hover {
+        .womenSubList .brandItems .category .categoryItems p:hover,
+        .kidsSubList .items .category .categoryItems p:hover,
+        .beautySubList .items .category .categoryItems p:hover,
+        .hakSubList .items .category .categoryItems p:hover,
+        .hakSubList .brandItems .category .categoryItems p:hover {
             text-decoration: underline;
             cursor: pointer;
         }
 
         .menSubList .choice .shopBy,
-        .womenSubList .choice .shopBy {
+        .womenSubList .choice .shopBy,
+        .kidsSubList .choice .shopBy,
+        .beautySubList .choice .shopBy,
+        .hakSubList .choice .shopBy {
             font-family: 'Source Sans Pro';
             color: #bebdb5;
             margin-right: 10px;
@@ -332,7 +361,11 @@
         .menSubList .choice .categories,
         .menSubList .choice .brands,
         .womenSubList .choice .categories,
-        .womenSubList .choice .brands {
+        .womenSubList .choice .brands,
+        .kidsSubList .choice .categories,
+        .beautySubList .choice .categories,
+        .hakSubList .choice .categories,
+        .hakSubList .choice .brands {
             cursor: pointer;
             font-family: 'Source Sans Pro';
             padding: 10px;
@@ -344,7 +377,10 @@
         }
 
         .wrapper,
-        .womenWrapper {
+        .womenWrapper,
+        .kidsWrapper,
+        .beautyWrapper,
+        .hakWrapper {
             position: absolute;
             background-color: white;
             display: none;
@@ -665,6 +701,516 @@
                         </div>
                         <div class="category">
                             <label class="title">ALL THATS NEW</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">CURVE SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">BEAUTY</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FUSION WEAR</label>
+                            <div class="categoryItems">
+                                <p>Dresses & Gowns</p>
+                                <p>Kurtas</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Pants & Shorts</p>
+                                <p>Jackets & Shrugs</p>
+                                <p>Shirts, Tops & Tunics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ETHNIC WEAR</label>
+                            <div class="categoryItems">
+                                <p>Kurtas</p>
+                                <p>Dress Material</p>
+                                <p>Salwars & Churidars</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Sarees</p>
+                                <p>Dupattas</p>
+                                <p>Kurta Suit Sets</p>
+                                <p>Blouses</p>
+                                <p>Leggings</p>
+                                <p>Skirts & Ghagras</p>
+                                <p>Shawls & Wraps</p>
+                                <p>Palazzos & Culottes</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                                <p>Fashion Jewellery</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">LINGERIE & INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Bras</p>
+                                <p>Panties</p>
+                                <p>Camisoles & Slips</p>
+                                <p>Maternity Wear</p>
+                                <p>Thermal Wear</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                                <p>Bag, Belts And Wallets</p>
+                                <p>Stoles And Stockings</p>
+                                <p>Caps</p>
+                                <p>Luggage & Trolleys</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Dresses Under 999</p>
+                                <p>Footwear Under 799</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flat Sandals</p>
+                                <p>Sports Shoes</p>
+                                <p>Flip Flop & Slippers</p>
+                                <p>Heeled Sandals</p>
+                                <p>Heeled Shoes</p>
+                                <p>Boots</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Tops</p>
+                                <p>T-Shirts</p>
+                                <p>Jeans & Jeggings</p>
+                                <p>Dresses</p>
+                                <p>Trousers & Pants</p>
+                                <p>Shirts</p>
+                                <p>Track Pants</p>
+                                <p>Skirts & Shorts</p>
+                                <p>Jackets & Coats</p>
+                                <p>Jumpsuits & Playsuits</p>
+                                <p>Shrugs & Boleros</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Sweaters & Cardigans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="brandItems">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">AJIO GOLD BRANDS</label>
+                            <div class="categoryItems">
+                                <p>Superdry</p>
+                                <p>Scotch & Soda</p>
+                                <p>GAP</p>
+                                <p>GAS</p>
+                                <p>GANT</p>
+                                <p>G Star Raw</p>
+                                <p>CLARKS</p>
+                                <p>EMPORIO ARMANI</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">EXCLUSIVE BRANDS</label>
+                            <div class="categoryItems">
+                                <p>BUDA JEANS CO</p>
+                                <p>Netplay</p>
+                                <p>DNMX</p>
+                                <p>John Players</p>
+                                <p>Lee Cooper</p>
+                                <p>Teamspirit</p>
+                                <p>Performax</p>
+                                <p>Altheory</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">INTERNATIONAL BRANDS</label>
+                            <div class="categoryItems">
+                                <p>French Connection</p>
+                                <p>TOM TAILOR</p>
+                                <p>New Balance</p>
+                                <p>DIESEL</p>
+                                <p>LACOSTE</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Campus</p>
+                                <p>Crocs</p>
+                                <p>Nike</p>
+                                <p>Puma</p>
+                                <p>Red Tape</p>
+                                <p>Reebok</p>
+                                <p>Skechers</p>
+                                <p>UCB</p>
+                                <p>Woodland</p>
+                                <p>New Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>THE INDIAN GARAGE CO</p>
+                                <p>US Polo Assn</p>
+                                <p>LEVIS</p>
+                                <p>lOUIS PHILIPPE</p>
+                                <p>THE BEAR HOUSE</p>
+                                <p>KETCH</p>
+                                <p>DENNISLINGO PREMIUM ATTIRE</p>
+                                <p>Jack & Jones</p>
+                                <p>ALLEN SOLLY</p>
+                                <p>Fort Collins</p>
+                                <p>SPYKAR</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Calvin Klein Underwear</p>
+                                <p>Jockey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>ADIDAS</p>
+                                <p>Allen Solly</p>
+                                <p>F Gear</p>
+                                <p>LEVIS</p>
+                                <p>Puma</p>
+                                <p>Rayban</p>
+                                <p>United Colors of Benetton</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">A-Z BRANDS</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kids navbar hover  -->
+    <div class="kidsWrapper">
+        <div class="kidsSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                            <div class="categoryItems">
+                                <p>Clothing</p>
+                                <p>Footwear</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">PLUS SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ETHNIC & FESTIVE</label>
+                            <div class="categoryItems">
+                                <p>Kurtas And Shirts</p>
+                                <p>Nehru Jackets</p>
+                                <p>Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Jackets & Coats</p>
+                                <p>Jeans</p>
+                                <p>Shirts</p>
+                                <p>Shorts & 3/4ths</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Track Pants</p>
+                                <p>Trousers & Pants</p>
+                                <p>T-Shirts</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flip-Flops & Slippers</p>
+                                <p>Formal Shoes</p>
+                                <p>Sandals</p>
+                                <p>Sneakers</p>
+                                <p>Sports Shoes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Backpacks</p>
+                                <p>Bags & Wallets</p>
+                                <p>Belts</p>
+                                <p>Caps & Hats</p>
+                                <p>Fashion Accessories</p>
+                                <p>Luggage & Trolleys</p>
+                                <p>Socks</p>
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">PRECIOUS JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Briefs</p>
+                                <p>Trunks & Boxers</p>
+                                <p>Vests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Bags Under 1499</p>
+                                <p>FootWear Under 1499</p>
+                                <p>Jeans Under 1199</p>
+                                <p>Shorts & 3/4ths Under 699</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">#AJIORECOMMENDS</label>
+                            <div class="categoryItems">
+                                <p>Play Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- beauty navbar hover  -->
+    <div class="beautyWrapper">
+        <div class="beautySubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">CURVE SIZE</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">AJIO GLOBAL</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">NIGHT & LOUNGEWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">BEAUTY</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FUSION WEAR</label>
+                            <div class="categoryItems">
+                                <p>Dresses & Gowns</p>
+                                <p>Kurtas</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Pants & Shorts</p>
+                                <p>Jackets & Shrugs</p>
+                                <p>Shirts, Tops & Tunics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">ETHNIC WEAR</label>
+                            <div class="categoryItems">
+                                <p>Kurtas</p>
+                                <p>Dress Material</p>
+                                <p>Salwars & Churidars</p>
+                                <p>Kurtis & Tunics</p>
+                                <p>Sarees</p>
+                                <p>Dupattas</p>
+                                <p>Kurta Suit Sets</p>
+                                <p>Blouses</p>
+                                <p>Leggings</p>
+                                <p>Skirts & Ghagras</p>
+                                <p>Shawls & Wraps</p>
+                                <p>Palazzos & Culottes</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">JEWELLERY</label>
+                            <div class="categoryItems">
+                                <p>Gold And Silver Coins</p>
+                                <p>Gold And Diamond Jewellery</p>
+                                <p>Silver Jewellery</p>
+                                <p>Fashion Jewellery</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">LINGERIE & INNERWEAR</label>
+                            <div class="categoryItems">
+                                <p>Bras</p>
+                                <p>Panties</p>
+                                <p>Camisoles & Slips</p>
+                                <p>Maternity Wear</p>
+                                <p>Thermal Wear</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                            <div class="categoryItems">
+                                <p>Sunglasses & Frames</p>
+                                <p>Watches</p>
+                                <p>Bag, Belts And Wallets</p>
+                                <p>Stoles And Stockings</p>
+                                <p>Caps</p>
+                                <p>Luggage & Trolleys</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">FEATURED</label>
+                            <div class="categoryItems">
+                                <p>Dresses Under 999</p>
+                                <p>Footwear Under 799</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                            <div class="categoryItems">
+                                <p>Casual Shoes</p>
+                                <p>Flat Sandals</p>
+                                <p>Sports Shoes</p>
+                                <p>Flip Flop & Slippers</p>
+                                <p>Heeled Sandals</p>
+                                <p>Heeled Shoes</p>
+                                <p>Boots</p>
+                                <p>Woodland</p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <label class="title">WESTERN WEAR</label>
+                            <div class="categoryItems">
+                                <p>Tops</p>
+                                <p>T-Shirts</p>
+                                <p>Jeans & Jeggings</p>
+                                <p>Dresses</p>
+                                <p>Trousers & Pants</p>
+                                <p>Shirts</p>
+                                <p>Track Pants</p>
+                                <p>Skirts & Shorts</p>
+                                <p>Jackets & Coats</p>
+                                <p>Jumpsuits & Playsuits</p>
+                                <p>Shrugs & Boleros</p>
+                                <p>Sweatshirts & Hoodies</p>
+                                <p>Sweaters & Cardigans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hak navbar hover  -->
+    <div class="hakWrapper">
+        <div class="hakSubList">
+            <div class="choice">
+                <label class="shopBy">Shop By:</label>
+                <label class="categories">CATEGORIES</label>
+                <label class="brands">BRANDS</label>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="col">
+                        <div class="category">
+                            <label class="title">CLOTHING</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">FOOTWEAR</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ACCESSORIES</label>
+                        </div>
+                        <div class="category">
+                            <label class="title">ALL THATS NEW</label>
                             <div class="categoryItems">
                                 <p>Clothing</p>
                                 <p>Footwear</p>
@@ -871,7 +1417,6 @@
             </div>
         </div>
     </div>
-
     <div class="blackbg">
         <div class="space">
             <p>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a
@@ -988,6 +1533,7 @@
         let brandHover = document.querySelector(".menSubList .choice .brands");
         men.addEventListener('mouseenter', () => {
             console.log("d");
+            men.style.fontWeight = "bold";
             menSL.style.display = "block";
             wrap.style.display = "block";
             blackbg.style.backgroundColor = "rgba(128, 128, 128)";
@@ -998,18 +1544,21 @@
         men.addEventListener('mouseout', () => {
             console.log("y");
             menSL.style.display = "none";
+            men.style.fontWeight = "100";
             wrap.style.display = "none";
             blackbg.style.backgroundColor = "transparent";
             blackbg.style.opacity = "1";
         });
         menSL.addEventListener('mouseover', () => {
             console.log("d");
+            men.style.fontWeight = "bold";
             menSL.style.display = "block";
             wrap.style.display = "block";
             blackbg.style.backgroundColor = "rgba(128, 128, 128)";
         });
         menSL.addEventListener('mouseout', () => {
             console.log("y");
+            men.style.fontWeight = "100";
             menSL.style.display = "none";
             wrap.style.display = "none";
             blackbg.style.backgroundColor = "transparent";
@@ -1039,7 +1588,6 @@
     </script>
     <!-- women navbar hover script  -->
     <script>
-        //men hover function
         let women = document.querySelector(".navbarRight .lower .label .women");
         let womenWrap = document.querySelector('.womenWrapper');
         let womenSL = document.querySelector(".womenSubList");
@@ -1048,6 +1596,7 @@
         let womenBrandItems = document.querySelector(".womenSubList .brandItems");
         let womenBrandHover = document.querySelector(".womenSubList .choice .brands");
         women.addEventListener('mouseenter', () => {
+            women.style.fontWeight = "bold";
             womenSL.style.display = "block";
             womenWrap.style.display = "block";
             blackbg.style.backgroundColor = "rgba(128, 128, 128)";
@@ -1056,17 +1605,20 @@
         });
 
         women.addEventListener('mouseout', () => {
+            women.style.fontWeight = "100";
             womenSL.style.display = "none";
             womenWrap.style.display = "none";
             blackbg.style.backgroundColor = "transparent";
             blackbg.style.opacity = "1";
         });
         womenSL.addEventListener('mouseover', () => {
+            women.style.fontWeight = "bold";
             womenSL.style.display = "block";
             womenWrap.style.display = "block";
             blackbg.style.backgroundColor = "rgba(128, 128, 128)";
         });
         womenSL.addEventListener('mouseout', () => {
+            women.style.fontWeight = "100";
             womenSL.style.display = "none";
             womenWrap.style.display = "none";
             blackbg.style.backgroundColor = "transparent";
@@ -1089,6 +1641,150 @@
             womenCategory.style.fontWeight = "bold";
             womenBrandHover.style.backgroundColor = "#f1f1ed";
             womenCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- kids navbar hover script  -->
+    <script>
+        let kids = document.querySelector(".navbarRight .lower .label .kids");
+        let kidsWrap = document.querySelector('.kidsWrapper');
+        let kidsSL = document.querySelector(".kidsSubList");
+        let kidsCategory = document.querySelector(".kidsSubList .choice .categories");
+        let kidsCategoryItems = document.querySelector(".kidsSubList .Items");
+        kids.addEventListener('mouseenter', () => {
+            kids.style.fontWeight = "bold";
+            kidsSL.style.display = "block";
+            kidsWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            kidsCategory.style.fontWeight = "bold";
+        });
+
+        kids.addEventListener('mouseout', () => {
+            kids.style.fontWeight = "100";
+            kidsSL.style.display = "none";
+            kidsWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        kidsSL.addEventListener('mouseover', () => {
+            kids.style.fontWeight = "bold";
+            kidsSL.style.display = "block";
+            kidsWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        kidsSL.addEventListener('mouseout', () => {
+            kids.style.fontWeight = "100";
+            kidsSL.style.display = "none";
+            kidsWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        kidsCategory.addEventListener('mouseover', () => {
+            kidsCategoryItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            kidsCategory.style.fontWeight = "bold";
+            kidsCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- beauty navbar hover script  -->
+    <script>
+        let beauty = document.querySelector(".navbarRight .lower .label .beauty");
+        let beautyWrap = document.querySelector('.beautyWrapper');
+        let beautySL = document.querySelector(".beautySubList");
+        let beautyCategory = document.querySelector(".beautySubList .choice .categories");
+        let beautyCategoryItems = document.querySelector(".beautySubList .Items");
+        beauty.addEventListener('mouseenter', () => {
+            beauty.style.fontWeight = "bold";
+            beautySL.style.display = "block";
+            beautyWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            beautyCategory.style.fontWeight = "bold";
+        });
+
+        beauty.addEventListener('mouseout', () => {
+            beauty.style.fontWeight = "100";
+            beautySL.style.display = "none";
+            beautyWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        beautySL.addEventListener('mouseover', () => {
+            beauty.style.fontWeight = "bold";
+            beautySL.style.display = "block";
+            beautyWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        beautySL.addEventListener('mouseout', () => {
+            beauty.style.fontWeight = "100";
+            beautySL.style.display = "none";
+            beautyWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        beautyCategory.addEventListener('mouseover', () => {
+            beautyCategoryItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            beautyCategory.style.fontWeight = "bold";
+            beautyCategory.style.backgroundColor = "#d4d3cb";
+        });
+
+    </script>
+    <!-- hak navbar hover script  -->
+    <script>
+        let hak = document.querySelector(".navbarRight .lower .label .hak");
+        let hakWrap = document.querySelector('.hakWrapper');
+        let hakSL = document.querySelector(".hakSubList");
+        let hakCategory = document.querySelector(".hakSubList .choice .categories");
+        let hakCategoryItems = document.querySelector(".hakSubList .Items");
+        let hakBrandItems = document.querySelector(".hakSubList .brandItems");
+        let hakBrandHover = document.querySelector(".hakSubList .choice .brands");
+        hak.addEventListener('mouseenter', () => {
+            hak.style.fontWeight = "bold";
+            hakSL.style.display = "block";
+            hakWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "100";
+            hakCategory.style.fontWeight = "bold";
+        });
+
+        hak.addEventListener('mouseout', () => {
+            hak.style.fontWeight = "100";
+            hakSL.style.display = "none";
+            hakWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        hakSL.addEventListener('mouseover', () => {
+            hak.style.fontWeight = "bold";
+            hakSL.style.display = "block";
+            hakWrap.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+        });
+        hakSL.addEventListener('mouseout', () => {
+            hak.style.fontWeight = "100";
+            hakSL.style.display = "none";
+            hakWrap.style.display = "none";
+            blackbg.style.backgroundColor = "transparent";
+            blackbg.style.opacity = "1";
+        });
+        hakBrandHover.addEventListener('mouseover', () => {
+            hakCategoryItems.style.display = "none";
+            hakBrandItems.style.display = "block";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "bold";
+            hakCategory.style.fontWeight = "100";
+            hakBrandHover.style.backgroundColor = "#d4d3cb";
+            hakCategory.style.backgroundColor = "#f1f1ed";
+        });
+        hakCategory.addEventListener('mouseover', () => {
+            hakCategoryItems.style.display = "block";
+            hakBrandItems.style.display = "none";
+            blackbg.style.backgroundColor = "rgba(128, 128, 128)";
+            hakBrandHover.style.fontWeight = "100";
+            hakCategory.style.fontWeight = "bold";
+            hakBrandHover.style.backgroundColor = "#f1f1ed";
+            hakCategory.style.backgroundColor = "#d4d3cb";
         });
 
     </script>
