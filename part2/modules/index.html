@@ -10,6 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,200,0,0" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
     <title>Product Page</title>
     <style>
         /*navbar*/
@@ -380,7 +382,7 @@
         .kidsWrapper,
         .beautyWrapper,
         .hakWrapper {
-            position: absolute;
+            position: fixed;
             background-color: white;
             display: none;
             top: 95px;
@@ -591,10 +593,15 @@
             font-weight: normal;
             font-style: normal;
         }
-        .similarStyles,.recentlyViewed{
+
+        .similarStyles,
+        .recentlyViewed,
+        .shopMoreTshirts,
+        .aboutPUMA,
+        .ratings {
             font-family: 'Lora Regular Bold';
             font-size: 18px;
-            color:#585858;
+            color: #585858;
         }
 
 
@@ -690,31 +697,32 @@
             flex-direction: column;
             align-items: center;
         }
-        .overallCont{
-            margin-bottom:30px;
+
+        .overallCont {
+            margin-bottom: 30px;
         }
 
         .left1 {
             position: absolute;
-            bottom: 0px;
+            bottom: -550px;
             left: 100px;
         }
 
         .right1 {
             position: absolute;
-            bottom: 0px;
+            bottom: -550px;
             right: 100px;
         }
 
         .left2 {
             position: absolute;
-            bottom: -410px;
+            bottom: -950px;
             left: 100px;
         }
 
         .right2 {
             position: absolute;
-            bottom: -410px;
+            bottom: -950px;
             right: 100px;
         }
 
@@ -838,8 +846,7 @@
         #keyup:hover {
             background-color: #e7dfdf
         }
-    </style>
-    <style>
+        /* recent styles,about puma, similar styles  */
         .recentCont {
             display: flex;
             align-items: space-between;
@@ -849,7 +856,7 @@
             margin-bottom: 30px;
             margin-top: 30px;
         }
-    
+
         .recentCont .lineLeft p {
             padding-left: 10px;
             padding-right: 500px;
@@ -858,7 +865,7 @@
             border-color: #CCC;
             border-width: 1px;
         }
-    
+
         .recentCont .lineRight p {
             padding-left: 10px;
             padding-right: 500px;
@@ -866,6 +873,54 @@
             border-bottom: solid;
             border-color: #CCC;
             border-width: 1px;
+        }
+        /* shop more tshirts  */
+        .SMTCard{
+            display: flex;
+            align-items: space-between;
+            justify-content: space-between;
+            margin-left: 75px;
+            margin-right: 70px;
+        }
+        .SMTCard .all,.SMTCard .style,.SMTCard .color,.SMTCard .brand{
+            height:70px;
+            width: 291px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f1;
+            margin-bottom: 50px;
+        }
+        .SMTCard .all,.SMTCard .style,.SMTCard .color,.SMTCard .brand{
+            p{
+                font-family: 'Source Sans Pro';
+                margin-top: 5%;
+                font-size: 16px;
+                cursor: pointer;
+                color:#307597;
+            }
+            p:hover{
+                text-decoration: underline;
+            }
+        }
+        /* aboutPUMA  */
+        .pumaDesc{
+            margin-left: 75px;
+            margin-right: 70px;
+            margin-bottom: 70px;;
+        }
+        .pumaDesc .pumaData{
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color: #333;
+            margin-left: 15px;
+        }
+        .pumaDesc .viewPuma{
+            color:#121212;
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            text-decoration: underline;
+            margin-left: 115px;
         }
     </style>
 </head>
@@ -1891,7 +1946,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- products  -->
     <div class="blackbg">
         <div class="container-fluid">
@@ -1958,6 +2013,73 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Ratings  -->
+        <div class="recentCont">
+            <div class="lineLeft">
+                <p></p>
+            </div>
+            <div class="ratings">
+                <label>Ratings</label>
+            </div>
+            <div class="lineRight">
+                <p></p>
+            </div>
+        </div>
+        <!-- about PUMA  -->
+        <div class="recentCont">
+            <div class="lineLeft">
+                <p></p>
+            </div>
+            <div class="aboutPUMA">
+                <label>About PUMA</label>
+            </div>
+            <div class="lineRight">
+                <p></p>
+            </div>
+        </div>
+        <div class="pumaDesc">
+            <div class="row">
+                <div class="col-1">
+                    <img src="https://www.ajio.com/_ui/brand-logo/puma.jpg" alt="pumaLogo">
+                </div>
+                <div class="col Pumadata">
+                    <p>PUMA is one of the world’s leading Sports Brands, designing, developing, selling and marketing footwear, apparel and
+                    accessories. For 70 years, PUMA has established a history of making fast product designs for the fastest athletes on the
+                    planet. PUMA offers performance and sport-inspired lifestyle products in categories such as Running and Training,
+                    Motorsports, Football, Badminton and Basketball. Sport style categories from PUMA include Sneakers, Slip-ons and
+                    Loungewear. It engages in exciting collaborations with renowned design brands to bring innovative and fast designs to
+                    the sports and sports-inspired lifestyle world. The company distributes its products in more than 120 countries and is
+                    headquartered in Herzogenaurach/Germany.</p>
+                </div>
+            </div>
+            <p class="viewPuma">View all styles from this brand ></p>
+        </div>
+        <!-- shop more tshirts  -->
+        <div class="recentCont">
+            <div class="lineLeft">
+                <p></p>
+            </div>
+            <div class="shopMoreTshirts">
+                <label>Shop More Tshirts</label>
+            </div>
+            <div class="lineRight">
+                <p></p>
+            </div>
+        </div>
+        <div class="SMTCard">
+            <div class="all"><p>All Tshirts</p><span class="material-symbols-outlined">
+                chevron_right
+            </span></div>
+            <div class="style"><p>Style : Polo</p><span class="material-symbols-outlined">
+                chevron_right
+            </span></div>
+            <div class="color"><p>Color : Blue</p><span class="material-symbols-outlined">
+                chevron_right
+            </span></div>
+            <div class="brand"><p>Brand : PUMA</p><span class="material-symbols-outlined">
+                chevron_right
+            </span></div>
         </div>
         <!-- recently and similar styles  -->
         <div class="recentCont">
@@ -2200,13 +2322,17 @@
             </div>
         </div>
         <div class="recentCont">
-            <div class="lineLeft"><p></p></div>
+            <div class="lineLeft">
+                <p></p>
+            </div>
             <div class="recentlyViewed">
                 <label>Recently Viewed</label>
             </div>
-            <div class="lineRight"><p></p></div>
+            <div class="lineRight">
+                <p></p>
+            </div>
         </div>
-        
+
         <div class="overallCont">
             <div class="cardContainer">
                 <div class="recentCard">
