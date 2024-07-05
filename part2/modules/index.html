@@ -744,6 +744,13 @@
             font-weight: normal;
             font-style: normal;
         }
+        
+        @font-face {
+            font-family: 'Muli';
+            src: url('https://assets.ajio.com/static/assets/fonts/Muli_Regular--50aa6723c3983d2f7322ebd7fc99bdc3.50aa6723c3983d2f7322ebd7fc99bdc3.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
         .inner {
             /* change marginLeft to 58 if any problem */
@@ -907,7 +914,7 @@
         .pumaDesc{
             margin-left: 75px;
             margin-right: 70px;
-            margin-bottom: 70px;;
+            margin-bottom: 70px;
         }
         .pumaDesc .pumaData{
             font-family: 'Source Sans Pro';
@@ -921,6 +928,106 @@
             font-size: 14px;
             text-decoration: underline;
             margin-left: 115px;
+        }
+        .ratingsBar{
+            display:flex;
+            margin-left: 75px;
+            margin-right: 70px;
+            margin-bottom: 100px;
+        }
+        .ratingsBar .barInner{
+            margin-left: 60px;
+            border-right: solid;
+            border-width: 1px;
+            border-color: #ccc;
+        }
+        .ratingsBar .barInner .ratingDistribution{
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color:#6D6D6D;
+            margin-left: 105px;
+        }
+        .ratingsBar .barOuter .customerOpinion{
+            font-family: 'Source Sans Pro Bold';
+            font-size: 14px;
+            color:#000;
+            margin-left: 40px;
+        }
+        .ratingsBar .barInner .innerCon{
+            display: flex;
+            margin-top:-10px;
+        }
+        .ratingsBar .barInner .innerCon .stars{
+            padding-right: 10px;
+            border-right:solid;
+            border-color: #ccc;
+            border-width: 1px;
+        }
+        .ratingsBar .barInner .innerCon .stars .stars1{
+            font-family: 'Source Sans Pro';
+            font-size: 38px;
+            color:#000000;
+            margin-bottom: 0px;
+            margin-top: -15px;
+        }
+        .ratingsBar .barInner .innerCon .stars .stars2{
+            font-family: 'Source Sans Pro';
+            font-size: 14px;
+            color: #6d6d6d;
+            margin-top:-5px;
+        }
+        .ratingsBar .barInner .innerCon .ratingDistributionBar {
+            display: flex;
+            margin-left: 10px;
+        }
+        .ratingsBar .barInner .innerCon .ratingDistributionBar p{
+            font-family: 'Muli';
+            font-size: 12px;
+            color:#6d6d6d;
+            padding:0;
+            margin:0;
+        }
+        .ratingsBar .barInner .innerCon .ratingDistributionBar .barGraph{
+            display: flex;
+            flex-direction: column;
+            margin-top: -4px;
+            margin-left:4px ;
+        }
+        .ratingsBar .barOuter .barGraph{
+            display: flex;
+            flex-direction: column;
+            margin-top: -4px;
+            margin-left:40px ;
+        }
+        .ratingsBar .barOuter .barGraph .desk-progress{
+            margin-top: 10px;
+        }
+        .ratingsBar .barInner .innerCon .ratingDistributionBar .barGraph .desk-progress{
+            margin-top: 10px;
+        }
+        .ratingsBar .barInner .innerCon .ratingDistributionBar .percent{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            color:#6d6d6d;
+            margin-right:37px;
+        }
+        .barOuter .bars{
+            display: flex;
+        }
+        .barOuter .bars .percent{
+            display:flex;
+            margin-left: 16px;
+            flex-direction: column;
+            font-family: 'Source Sans Pro';
+            font-size: 12px;
+            color:#6d6d6d;
+            .loose{
+                font-family: 'Source Sans Pro Bold';
+                color:#202020;
+            }
         }
     </style>
 </head>
@@ -2024,6 +2131,159 @@
             </div>
             <div class="lineRight">
                 <p></p>
+            </div>
+        </div>
+        <div class="ratingsBar">
+            <div class="barInner">
+                <div class="ratingDistribution">
+                <p>Rating Distribution</p>
+                </div>
+                <div class="innerCon">
+                    <div class="stars">
+                        <p class="stars1">4.2 <img src="https://assets.ajio.com/static/img/grren_star_pdp.svg" alt="star"></p>
+                        <p class="stars2">210 Customers</p>
+                    </div>
+                    <div class="ratingDistributionBar">
+                        <div class="barTitle">
+                            <p class="num">
+                                5 <img style="width:8px" src="https://assets.ajio.com/static/img/grey_small_star.svg" alt="">
+                            </p>
+                            <p class="num">
+                                4 <img style="width:8px" src="https://assets.ajio.com/static/img/grey_small_star.svg" alt="">
+                            </p>
+                            <p class="num">
+                                3 <img style="width:8px" src="https://assets.ajio.com/static/img/grey_small_star.svg" alt="">
+                            </p>
+                            <p class="num">
+                                2 <img style="width:8px" src="https://assets.ajio.com/static/img/grey_small_star.svg" alt="">
+                            </p>
+                            <p class="num">
+                                1 <img style="width:8px" src="https://assets.ajio.com/static/img/grey_small_star.svg" alt="">
+                            </p>
+                        </div>
+                        <div class="barGraph">
+                            <div class="desk-progress"
+                                style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                                <div style="height: 8px; width: 11%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="desk-progress"
+                                style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                                <div style="height: 8px; width: 20%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                    <span></span></div>
+                            </div>
+                            <div class="desk-progress"
+                                style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                                <div style="height: 8px; width: 11%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                    <span></span></div>
+                            </div>
+                            <div class="desk-progress"
+                                style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                                <div style="height: 8px; width: 2%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                    <span></span></div>
+                            </div>
+                            <div class="desk-progress"
+                                style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                                <div style="height: 8px; width: 6%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                    <span></span></div>
+                            </div>
+                        </div>
+                        <div class="percent">
+                            <label for="">58%</label>
+                            <label for="">20%</label>
+                            <label for="">11%</label>
+                            <label for="">2%</label>
+                            <label for="">6%</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="barOuter">
+                <div class="customerOpinion">
+                    <p>Customer Opinion</p>
+                </div>
+                <div class="bars">
+                    <div class="barGraph">
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div
+                                style="height: 8px; width: 2%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div
+                                style="height: 8px; width: 8%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div
+                                style="height: 8px; width: 75%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div
+                                style="height: 8px; width: 10%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div
+                                style="height: 8px; width: 2%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="percent">
+                        <label for="">Too Loose(2%)</label>
+                        <label class="loose">Loose(8%)</label>
+                        <label>Perfect(75%)</label>
+                        <label for="">Tight(10%)</label>
+                        <label for="">Too Tight(2%)</label>
+                    </div>
+                    <div class="barGraph">
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div style="height: 8px; width: 3%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span></div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div style="height: 8px; width: 1%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span></div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div style="height: 8px; width: 15%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span></div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div style="height: 8px; width: 41%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span></div>
+                        </div>
+                        <div class="desk-progress"
+                            style="height: 8px; width: 180px; background-color: rgb(235, 235, 235); border-radius: 4px; display: inline-block;">
+                            <div style="height: 8px; width: 38%; background-color: rgb(213, 162, 72); border-radius: 4px; text-align: right;">
+                                <span></span></div>
+                        </div>
+                    </div>
+                    <div class="percent">
+                        <label for="">Very Bad(3%)</label>
+                        <label>Bad(1%)</label>
+                        <label>Average(15%)</label>
+                        <label class="loose">Very Good(41%)</label>
+                        <label for="">Excellent(38%)</label>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <!-- about PUMA  -->
